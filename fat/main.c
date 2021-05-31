@@ -137,6 +137,8 @@ bool searchFolder(uint8_t index, fat12_16_t *bootSectorInfo, FILE *pFile, cluste
     uint16_t rootDir = bootSectorInfo->BPB_NumFATs * bootSectorInfo->BPB_FATSz16 + 1;
     uint8_t *dataRead;
     char * readData;
+    uint32_t i;
+    uint32_t size;
 
     cluster_node_t *current = head;
     printf("head->cluster: %d\n", head->currentCluster);
@@ -167,6 +169,7 @@ bool searchFolder(uint8_t index, fat12_16_t *bootSectorInfo, FILE *pFile, cluste
         {
             is_read_data = true;
             readData = fatfs_read_file(current->currentCluster, *bootSectorInfo, current->fileSize, pFile);
+            size = current->fileSize;
         }
         if (0 != currentNode->currentCluster)
         {
@@ -191,7 +194,12 @@ bool searchFolder(uint8_t index, fat12_16_t *bootSectorInfo, FILE *pFile, cluste
         current = head;
         if (is_read_data == true)
         {
-            printf("Read data of index %d: \"%s\"\n", index, readData);
+            printf("Read data of index %d: \n", index);
+            for (i = 0; i < size; i++)
+            {
+            	printf("%c", readData[i]);
+			}
+			printf("\n");
         }
     }
     else

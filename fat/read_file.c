@@ -56,8 +56,8 @@ char * fatfs_read_file(uint16_t startCluster, fat12_16_t bootSectorInfo, uint32_
 {
     uint32_t SecfirstData = bootSectorInfo.BPB_NumFATs * bootSectorInfo.BPB_FATSz16 + 1 + bootSectorInfo.BPB_RootEntCnt*ENTRY_SIZE/bootSectorInfo.BPB_BytsPerSec;
     uint32_t nextClus = startCluster;
+    uint32_t cluster_status;
     uint32_t index=0;
-//    uint8_t *buff = (uint8_t*)malloc(bootSectorInfo.BPB_BytsPerSec);
     uint8_t *buff = (uint8_t*)malloc ((fileSize > bootSectorInfo.BPB_BytsPerSec) ? fileSize : bootSectorInfo.BPB_BytsPerSec);
     int32_t ret;
     // read FAT data and save to buffer
@@ -73,14 +73,21 @@ char * fatfs_read_file(uint16_t startCluster, fat12_16_t bootSectorInfo, uint32_
     }
     else
     {
-//    	TODO: read multiple cluster
-//    	while (FAT12_EOF != nextClus)
-//    	{
-    		printf("Cluster: %d\n", nextClus);
-    		ret = kmc_read_multi_sector(SecfirstData + (nextClus-2)* bootSectorInfo.BPB_SecPerClus, bootSectorInfo.BPB_SecPerClus, buff);
+        // read multiple cluster, read until cluster status is FAT12_EOF or number of reading byte equals fileSize
+    	do 
+    	{
+//    		printf("Cluster: %d\n", nextClus);
+    		ret = kmc_read_multi_sector(SecfirstData + (nextClus-2)* bootSectorInfo.BPB_SecPerClus, bootSectorInfo.BPB_SecPerClus, &buff[index]);
         	index += bootSectorInfo.BPB_SecPerClus * bootSectorInfo.BPB_BytsPerSec;
-        	nextClus = fatfs_next_clus(nextClus, fatData);/*next cluster */
-//		}
+        	cluster_status = fatfs_next_clus(nextClus, fatData);
+//        	printf("Cluster status: 0x%x\n", nextClus);
+        	nextClus++;
+        	if (nextClus == (startCluster + (fileSize/bootSectorInfo.BPB_BytsPerSec)))
+        	{
+        		break;
+        	}
+		}
+    	while (FAT12_EOF != cluster_status);
         buff[index] = '\0';
     }
     return buff;
