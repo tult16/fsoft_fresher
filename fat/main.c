@@ -4,6 +4,7 @@
 #include <string.h>
 #include <stdbool.h>
 #include <windows.h>
+#include "read_file.h"
 
 #define SIZESECTOR    512
 #define ENTRY_SIZE    32
@@ -16,57 +17,12 @@
 #define YEAR(x)     (((x) >> 9) + 1980)
 #define MONTH(x)    ((x >> 5) & 0xf)
 #define DAY(x)      (x & 0x1f)
-#define FAT16_EOF   0xFFFF
-#define FAT12_EOF   0xFFF
 
-#pragma pack(1)
-typedef struct {
-    uint8_t   BS_jmpBoot[3];//0x00-3byte Part of the bootstrap program.
-    uint8_t   BS_OEMName[8];//0x03-8byte Optional manufacturer description.
-    uint16_t  BPB_BytsPerSec;//0x0b-2byte Number of bytes per block (almost always 512).
-    uint8_t   BPB_SecPerClus;//0x0d-1byte Number of blocks per allocation unit.
-    uint16_t  BPB_RsvdSecCnt;//0x0e-2byte Number of reserved blocks.
-    uint8_t   BPB_NumFATs;//0x10-1byte Number of File Allocation Tables.
-    uint16_t  BPB_RootEntCnt;//0x11-2byte Number of root directory entries
-    uint16_t  BPB_TotSec16;//0x13-2byte Total number of blocks in the entire disk.
-    uint8_t   BPB_Media;//0x15-1byte Media Descriptor.
-    uint16_t  BPB_FATSz16;//0x16-2byte The number of blocks occupied by one copy of the File Allocation Table.
-    uint16_t  BPB_SecPerTrk;//0x18-2byte The number of blocks per track
-    uint16_t  BPB_NumHeads;//0x1a-2byte The number of heads
-    uint32_t  BPB_HiddSec;//0x1c-4byte The number of hidden blocks.
-    uint32_t  BPB_TotSec32;//0x20-4byte Total number of blocks in the entire disk
-    uint8_t   BS_DrvNum;//0x24-2byte Physical drive number.
-    uint8_t   BS_Reserved1;//0x25-1byte  Unused
-    uint8_t   BS_BootSig;//0x26-1byte Extended Boot Record Signature
-    uint32_t  BS_VolID;//0x27-4byte Volume Serial Number.
-    uint8_t   BS_VolLab[11];//0x2b-11byte Volume Label.
-    uint8_t   BS_FilSysType[8];//0x36-8byte File system identifier
 
-} fat12_16_t;//FatBootSector;
-
-typedef struct {
-   uint8_t  short_FileName[8];//11BYTE
-   uint8_t  extensionFileName[3];
-   uint8_t  fileAttributes;//1BYTE
-   uint8_t  reserved[10];//10BYTE
-   uint16_t Time;//2BYTE
-   uint16_t Date;//2BYTE
-   uint16_t firstCluster;//2BYTE
-   uint32_t sizeofFile;//4BYTE
-} root_entry_t;
-
-typedef struct clusterNode {
-    uint16_t    currentCluster;
-    bool        isFile;
-    uint8_t     index;
-    uint32_t    fileSize;
-    struct clusterNode *next;
-} cluster_node_t;
 
 cluster_node_t *head = NULL;
 cluster_node_t *listPoint;
 cluster_node_t *tail =  NULL;
-FILE *pFile;
 
 
 void LinkedList_Delete(cluster_node_t ** head)
@@ -172,71 +128,6 @@ void printDirectoryInfo(FILE *pFile, uint16_t entryCount)
     }
 }
 
-
-int32_t kmc_read_sector(uint32_t index, uint8_t *buff)
-{
-    fseek(pFile, index*SIZESECTOR, SEEK_SET);
-    return fread(buff, 1, SIZESECTOR, pFile);
-}
-
-int32_t kmc_read_multi_sector(uint32_t index, uint32_t num, uint8_t *buff)
-{
-    printf("Offset: 0x%x\n", index*SIZESECTOR);
-    fseek(pFile, index*SIZESECTOR, SEEK_SET);
-    return fread(buff, 1, SIZESECTOR*num, pFile);
-}
-
-/*function next cluster*/
-static uint32_t fatfs_next_clus(uint32_t firstClus, uint8_t * fatData)
-{
-    uint32_t retVal;
-    uint32_t fatIndex;
-
-    fatIndex = firstClus*3/2;/*1.5 is size of element fat12*/
-
-    if ((fatIndex % 2) == 1)
-    {/*is odd number bit tail  = 1*/
-        retVal = fatData[fatIndex]>>4 | (fatData[fatIndex+1]<<4);
-    }
-    else
-    {/*is even number*/
-        retVal = fatData[fatIndex]|(fatData[fatIndex+1]&0x0F)<<8;
-    }
-    return retVal;
-}
-
-
-char * fatfs_read_file(uint16_t startCluster, fat12_16_t bootSectorInfo, uint32_t fileSize, FILE *pFile)
-{
-    uint32_t SecfirstData = bootSectorInfo.BPB_NumFATs * bootSectorInfo.BPB_FATSz16 + 1 + bootSectorInfo.BPB_RootEntCnt*ENTRY_SIZE/SIZESECTOR;
-    uint32_t nextClus = startCluster;
-    uint32_t index=0;
-    uint8_t *buff = (uint8_t*)malloc(SIZESECTOR);
-    int32_t ret;
-    // read FAT data and save to buffer
-    uint32_t fatAddrOffeset = bootSectorInfo.BPB_BytsPerSec;
-    uint8_t fatData[bootSectorInfo.BPB_BytsPerSec * bootSectorInfo.BPB_NumFATs];
-    fseek(pFile, fatAddrOffeset, SEEK_SET);
-    fread(fatData, 1, bootSectorInfo.BPB_BytsPerSec * bootSectorInfo.BPB_NumFATs, pFile);
-
-    if (fileSize <= SIZESECTOR)
-    {
-        ret = kmc_read_sector(SecfirstData + (nextClus-2)* bootSectorInfo.BPB_SecPerClus, buff);
-        buff[fileSize] = '\0';
-        // printf("data read: %s", buff);
-    }
-    else
-    {
-        ret = kmc_read_multi_sector(SecfirstData + (nextClus-2)* bootSectorInfo.BPB_SecPerClus, bootSectorInfo.BPB_SecPerClus, buff);
-        index += bootSectorInfo.BPB_SecPerClus * bootSectorInfo.BPB_BytsPerSec;
-        nextClus = fatfs_next_clus(nextClus, fatData);/*next cluster */
-        buff[index] = '\0';
-        // printf("%s", buff);
-    }
-    return buff;
-    printf("\n");
-}
-
 bool searchFolder(uint8_t index, fat12_16_t *bootSectorInfo, FILE *pFile, cluster_node_t *currentNode)
 {
     bool check = false;
@@ -321,13 +212,11 @@ int main() {
     uint16_t i;
     uint16_t start_cluster;
     uint32_t cluster_offset;
+    
+//    read boot_sector
+    *bootSectorInfo = fatfs_init("");
 
-    pFile=fopen("floppy.img","a+");
-    memset(bootSectorInfo,'\0', sizeof(fat12_16_t));
-
-    fread(bootSectorInfo, sizeof(fat12_16_t), 1, pFile);
-    bootSectorInfo->BS_FilSysType[5] = '\0';
-
+//	read roor_directory
     nodeRootDirectory = bootSectorInfo->BPB_NumFATs * bootSectorInfo->BPB_FATSz16 + 1;
 
     fseek(pFile, nodeRootDirectory*SIZESECTOR, SEEK_SET);
