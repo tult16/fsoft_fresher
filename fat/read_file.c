@@ -23,13 +23,13 @@ static uint32_t fatfs_next_clus(uint32_t firstClus, uint8_t * fatData)
 
     fatIndex = firstClus*3/2;/*1.5 is size of element fat12*/
 
-    if ((fatIndex % 2) == 1)
-    {/*is odd number bit tail  = 1*/
-        retVal = fatData[fatIndex]>>4 | (fatData[fatIndex+1]<<4);
+    if ((firstClus % 2) == 1)
+    {
+        retVal = (fatData[fatIndex] >> 4) | (fatData[fatIndex+1] << 4);
     }
     else
-    {/*is even number*/
-        retVal = fatData[fatIndex]|(fatData[fatIndex+1]&0x0F)<<8;
+    {
+        retVal = fatData[fatIndex] | ((fatData[fatIndex+1] & 0x0F) << 8);
     }
     return retVal;
 }
@@ -62,9 +62,11 @@ char * fatfs_read_file(uint16_t startCluster, fat12_16_t bootSectorInfo, uint32_
     int32_t ret;
     // read FAT data and save to buffer
     uint32_t fatAddrOffeset = bootSectorInfo.BPB_BytsPerSec;
-    uint8_t fatData[bootSectorInfo.BPB_BytsPerSec * bootSectorInfo.BPB_NumFATs];
+    uint32_t fatByteCount = bootSectorInfo.BPB_BytsPerSec * bootSectorInfo.BPB_NumFATs * 9;
+    uint8_t fatData[fatByteCount];
+//    printf("Fat offset: 0x%x\n", fatAddrOffeset);
     fseek(pFile, fatAddrOffeset, SEEK_SET);
-    fread(fatData, 1, bootSectorInfo.BPB_BytsPerSec * bootSectorInfo.BPB_NumFATs, pFile);
+    fread(fatData, 1, fatByteCount, pFile);
 
     if (fileSize <= bootSectorInfo.BPB_BytsPerSec)
     {
@@ -73,21 +75,14 @@ char * fatfs_read_file(uint16_t startCluster, fat12_16_t bootSectorInfo, uint32_
     }
     else
     {
-        // read multiple cluster, read until cluster status is FAT12_EOF or number of reading byte equals fileSize
-    	do 
+        // read until next cluster is FAT12_EOF
+    	while (FAT12_EOF != nextClus)
     	{
 //    		printf("Cluster: %d\n", nextClus);
     		ret = kmc_read_multi_sector(SecfirstData + (nextClus-2)* bootSectorInfo.BPB_SecPerClus, bootSectorInfo.BPB_SecPerClus, &buff[index]);
         	index += bootSectorInfo.BPB_SecPerClus * bootSectorInfo.BPB_BytsPerSec;
-        	cluster_status = fatfs_next_clus(nextClus, fatData);
-//        	printf("Cluster status: 0x%x\n", nextClus);
-        	nextClus++;
-        	if (nextClus == (startCluster + (fileSize/bootSectorInfo.BPB_BytsPerSec)))
-        	{
-        		break;
-        	}
+        	nextClus = fatfs_next_clus(nextClus, fatData);
 		}
-    	while (FAT12_EOF != cluster_status);
         buff[index] = '\0';
     }
     return buff;
