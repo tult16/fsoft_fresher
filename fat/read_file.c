@@ -51,14 +51,23 @@ fat12_16_t fatfs_init(char * filePath)
     return diskInfo;
 }
 
-char * fatfs_read_file(uint16_t startCluster, fat12_16_t bootSectorInfo, uint32_t fileSize)
+static void prinf_file_content(uint8_t *buff, uint32_t size)
+{
+    uint32_t i;
+    for (i = 0; i < size; i++)
+    {
+        printf("%c", buff[i]);
+    }
+}
+
+void fatfs_read_file(uint16_t startCluster, fat12_16_t bootSectorInfo, uint32_t fileSize)
 {
     uint32_t SecfirstData = bootSectorInfo.BPB_NumFATs * bootSectorInfo.BPB_FATSz16 + 1 + bootSectorInfo.BPB_RootEntCnt*ENTRY_SIZE/bootSectorInfo.BPB_BytsPerSec;
     uint32_t nextClus = startCluster;
     uint32_t cluster_status;
     uint32_t index=0;
     uint8_t i = 0;
-    uint8_t *buff = (uint8_t*)malloc ((fileSize > bootSectorInfo.BPB_BytsPerSec) ? fileSize : bootSectorInfo.BPB_BytsPerSec);
+    uint8_t buff[SIZESECTOR];
     int32_t ret;
     /* read FAT data and save to buffer */
     uint32_t fatAddrOffeset = bootSectorInfo.BPB_BytsPerSec;
@@ -74,21 +83,30 @@ char * fatfs_read_file(uint16_t startCluster, fat12_16_t bootSectorInfo, uint32_
     if (fileSize <= bootSectorInfo.BPB_BytsPerSec)
     {
         ret = kmc_read_sector(SecfirstData + (nextClus-2)* bootSectorInfo.BPB_SecPerClus, buff);
-        buff[fileSize] = '\0';
+        prinf_file_content(buff, fileSize);
     }
     else
     {
         /* read until next cluster is FAT12_EOF */
         while (FAT12_EOF != nextClus)
         {
-            /* printf("Cluster: %d\n", nextClus); */
-            ret = kmc_read_multi_sector(SecfirstData + (nextClus-2)* bootSectorInfo.BPB_SecPerClus, bootSectorInfo.BPB_SecPerClus, &buff[index]);
-            index += bootSectorInfo.BPB_SecPerClus * bootSectorInfo.BPB_BytsPerSec;
+            ret = kmc_read_multi_sector(SecfirstData + (nextClus-2)* bootSectorInfo.BPB_SecPerClus, bootSectorInfo.BPB_SecPerClus, buff);
             nextClus = fatfs_next_clus(nextClus, fatData);
+            if ((fileSize - index) > SIZESECTOR)
+            {
+                prinf_file_content(buff, SIZESECTOR);
+            }
+            else
+            {
+                prinf_file_content(buff, fileSize - index);
+            }
+            index += bootSectorInfo.BPB_SecPerClus * bootSectorInfo.BPB_BytsPerSec;
         }
-        buff[index] = '\0';
     }
-    return buff;
+    printf("\n=================================\n");
+    printf("End of reading file");
+    printf("\n=================================\n");
+    printf("\n");
 }
 
 int32_t fatfs_read_sector(uint8_t *buff, uint32_t sectorIndex)

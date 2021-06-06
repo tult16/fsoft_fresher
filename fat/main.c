@@ -36,13 +36,11 @@ void LinkedList_Display(void);
 void printDirectoryInfo(uint16_t entryCount, uint32_t sectorIndex, boolean addNode);
 bool searchFolder(uint8_t index, fat12_16_t bootSectorInfo);
 
-
 /*******************************************************************************
 * Code
 ******************************************************************************/
 void LinkedList_Delete(cluster_node_t** head_ref)
 {
-    /* deref head_ref to get the real head */
     cluster_node_t* current = *head_ref;
     cluster_node_t* next = NULL;
 
@@ -53,8 +51,6 @@ void LinkedList_Delete(cluster_node_t** head_ref)
         current = next;
     }
 
-    /* deref head_ref to affect the real head back
-        in the caller. */
     *head_ref = NULL;
 }
 
@@ -112,15 +108,16 @@ void printDirectoryInfo(uint16_t entryCount, uint32_t sectorIndex, boolean addNo
            "Modified Date",
            "Cluster",
            "Size");
-    uint8_t buffSector[512];
+    uint8_t buffSector[SIZESECTOR];
     /* 1 sector = 512 byte = 16 entries */
-    for (i = 0; i < entryCount/16; i++)
+    for (i = 0; i < entryCount/(SIZESECTOR/ENTRY_SIZE); i++)
     {
         fatfs_read_sector(&buffSector[0], (sectorIndex + i));
-        for (entryIndex = 0; entryIndex < 16; entryIndex++)
+        /* Read entry in each sector */
+        for (entryIndex = 0; entryIndex < (SIZESECTOR/ENTRY_SIZE); entryIndex++)
         {
             /* read each entry from sector data */
-            info = (root_entry_t *)&buffSector[entryIndex*32];
+            info = (root_entry_t *)&buffSector[entryIndex*ENTRY_SIZE];
             switch (info->fileAttributes)
             {
                 case 0x00:
@@ -167,14 +164,11 @@ bool searchFolder(uint8_t index, fat12_16_t bootSectorInfo)
     bool is_read_data = false;
     uint32_t cluster_offset;
     uint16_t entryCount;
-    uint16_t rootDir = bootSectorInfo.BPB_NumFATs * bootSectorInfo.BPB_FATSz16 + 1;
-    uint8_t *dataRead;
-    char * readData;
+    uint16_t rootDirSectorIndex = bootSectorInfo.BPB_NumFATs * bootSectorInfo.BPB_FATSz16 + 1;
     uint32_t i;
     uint32_t size;
 
     cluster_node_t *current = g_pHead;
-    /* printf("g_pHead->cluster: %d\n", g_pHead->currentCluster); */
     if (g_pListPoint == NULL)
     {
         g_pListPoint = g_pHead;
@@ -201,21 +195,22 @@ bool searchFolder(uint8_t index, fat12_16_t bootSectorInfo)
         else
         {
             is_read_data = true;
-            readData = fatfs_read_file(current->currentCluster, bootSectorInfo, current->fileSize);
-            size = current->fileSize;
+            printf("\n=================================\n");
+            printf("Start reading file from index %d", index);
+            printf("\n=================================\n");
+            fatfs_read_file(current->currentCluster, bootSectorInfo, current->fileSize);
         }
         if (0 != g_pListPoint->currentCluster)
         {
-            cluster_offset = rootDir*SIZESECTOR + bootSectorInfo.BPB_RootEntCnt*ENTRY_SIZE + (g_pListPoint->currentCluster - 2)*SIZESECTOR;
+            cluster_offset = rootDirSectorIndex*SIZESECTOR + bootSectorInfo.BPB_RootEntCnt*ENTRY_SIZE \
+                             + (g_pListPoint->currentCluster - 2)*SIZESECTOR;
             entryCount = bootSectorInfo.BPB_SecPerClus * bootSectorInfo.BPB_BytsPerSec/32;
         }
         else
         {
-            cluster_offset = rootDir*SIZESECTOR;
+            cluster_offset = rootDirSectorIndex*SIZESECTOR;
             entryCount = bootSectorInfo.BPB_RootEntCnt;
         }
-
-       system("cls");
 
        if (is_read_data != true)
        {
@@ -224,21 +219,11 @@ bool searchFolder(uint8_t index, fat12_16_t bootSectorInfo)
 
         printDirectoryInfo(entryCount, cluster_offset/SIZESECTOR, !is_read_data);
         current = g_pHead;
-        if (is_read_data == true)
-        {
-            printf("Read data of index %d: \n", index);
-            for (i = 0; i < size; i++)
-            {
-                printf("%c", readData[i]);
-            }
-            printf("\n");
-        }
     }
     else
     {
         printf("Not found\n");
     }
-
 
     return check;
 }
@@ -259,6 +244,7 @@ int main() {
     {
         printf("User input: ");
         scanf("%d", &index);
+        system("cls");
         searchFolder(index, bootSectorInfo);
     }
     return 0;

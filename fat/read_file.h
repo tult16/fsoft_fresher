@@ -70,7 +70,7 @@ function reads file/folder from start cluster number
 input: start cluster, boot secto information, size of folder/size
 output: buffer read data
 */
-char * fatfs_read_file(uint16_t startCluster, fat12_16_t bootSectorInfo, uint32_t fileSize);
+void fatfs_read_file(uint16_t startCluster, fat12_16_t bootSectorInfo, uint32_t fileSize);
 
 /*
 function reads 1 sector
