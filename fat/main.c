@@ -232,8 +232,11 @@ int main() {
     fat12_16_t bootSectorInfo;
     g_pListPoint = (cluster_node_t *)malloc(sizeof(cluster_node_t));
     uint16_t rootDirSectorIndex;
-
-    bootSectorInfo = fatfs_init("d:\\test\\fsoft_fresher\\fat\\floppy.img");
+	char filePath[MAXNAME];/*name file*/
+    
+	printf("Import file path: ");
+    scanf("%s",&filePath);/*import file path*/
+    bootSectorInfo = fatfs_init(filePath);
     rootDirSectorIndex = bootSectorInfo.BPB_NumFATs * bootSectorInfo.BPB_FATSz16 + 1;
 
     printDirectoryInfo(bootSectorInfo.BPB_RootEntCnt, rootDirSectorIndex, true);

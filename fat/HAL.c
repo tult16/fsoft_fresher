@@ -22,19 +22,33 @@ bool kmc_init(char * filePath)
     return retVal;
 }
 
+/* function read 1 sector save buff*/
 int32_t kmc_read_sector(uint32_t index, uint8_t *buff)
 {
-    fseek(sp_filePointer, index*s_bytePerSec, SEEK_SET);
-    return fread(buff, 1, s_bytePerSec, sp_filePointer);
+    int32_t retVal = -1;
+
+    if(0 == fseek(sp_filePointer,index*s_bytePerSec, SEEK_SET))
+    {
+        retVal = fread(buff,1,s_bytePerSec,sp_filePointer);
+    }
+    
+    return retVal;
+
 }
 
+/*Function read multi sector save byff*/
 int32_t kmc_read_multi_sector(uint32_t index, uint32_t num, uint8_t *buff)
 {
-    /* printf("Offset: 0x%x\n", index*s_bytePerSec); */
-    fseek(sp_filePointer, index*s_bytePerSec, SEEK_SET);
-    return fread(buff, 1, s_bytePerSec*num, sp_filePointer);
-}
+    int32_t retVal = -1;
+    
+    if(0 == fseek(sp_filePointer,index*s_bytePerSec, SEEK_SET))
+    {
+        retVal = fread(buff,1,s_bytePerSec*num,sp_filePointer);
+    }
+    
+    return retVal;
 
+}
 
 /*function update size of sector*/
 void kmc_update_size_sec(uint32_t sizeSec)

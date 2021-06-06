@@ -7,7 +7,7 @@
 /*******************************************************************************
 * define
 ******************************************************************************/
-#define MAXlongName     255 /*max size long file name*/
+#define MAXNAME         256 /*max size long file name*/
 #define SIZESECTOR      512
 #define ENTRY_SIZE      32
 #define FAT16_EOF       0xFFFF

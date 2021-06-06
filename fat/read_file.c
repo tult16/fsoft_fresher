@@ -111,6 +111,6 @@ void fatfs_read_file(uint16_t startCluster, fat12_16_t bootSectorInfo, uint32_t 
 
 int32_t fatfs_read_sector(uint8_t *buff, uint32_t sectorIndex)
 {
-    kmc_update_size_sec(512);
+    kmc_update_size_sec(SIZESECTOR);
     return kmc_read_sector(sectorIndex, buff);
 }
