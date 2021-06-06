@@ -37,7 +37,6 @@ input: read size sector
 */
 void kmc_update_size_sec(uint32_t sizeSec);
 
-FILE * get_file_pointer(void);
 /*
 function deinitial kmc
 output: true if close file else false
