@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+    <fileVersion>5</fileVersion>
+    <fileChecksum>1473927043</fileChecksum>
+    <configuration>
+        <name>Debug</name>
+        <outputs>
+            <file>$PROJ_DIR$\Debug\Exe\LedBlinking.out</file>
+            <file>$TOOLKIT_DIR$\config\linker\NXP\MKL46Z256xxx4.icf</file>
+            <file>$PROJ_DIR$\..\CMSIS\CMSIS\Include\core_cmFunc.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\startup\startup_MKL46Z4.o</file>
+            <file>$TOOLKIT_DIR$\inc\c\aarch32\cmsis_iar.h</file>
+            <file>$TOOLKIT_DIR$\lib\shb_l.a</file>
+            <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
+            <file>$PROJ_DIR$\..\CMSIS\CMSIS\Include\core_cmInstr.h</file>
+            <file>$TOOLKIT_DIR$\lib\m6M_tl.a</file>
+            <file>$PROJ_DIR$\..\MKL46Z\MKL46Z\MKL46Z4.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\startup\startup_MKL46Z4.o.rsp</file>
+            <file>$PROJ_DIR$\..\MKL46Z\MKL46Z\MKL46Z4_features.h</file>
+            <file>$PROJ_DIR$\..\MKL46Z\MKL46Z\system_MKL46Z4.h</file>
+            <file>$PROJ_DIR$\..\source\main.c</file>
+            <file>$TOOLKIT_DIR$\lib\dl6M_tln.a</file>
+            <file>$PROJ_DIR$\..\MKL46Z\MKL46Z\system_MKL46Z4.c</file>
+            <file>$PROJ_DIR$\..\MKL46Z\MKL46Z\startup_MKL46Z4.s</file>
+            <file>$PROJ_DIR$\..\MKL46Z\MKL46Z\fsl_device_registers.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\aarch32\iccarm_builtin.h</file>
+            <file>$PROJ_DIR$\..\CMSIS\CMSIS\Include\core_cm0plus.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\startup\system_MKL46Z4.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\source\main.o</file>
+            <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdbool.h</file>
+            <file>$TOOLKIT_DIR$\lib\rt6M_tl.a</file>
+            <file>$PROJ_DIR$\Debug\List\LedBlinking.map</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Normal.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
+        </outputs>
+        <file>
+            <name>$PROJ_DIR$\Debug\Exe\LedBlinking.out</name>
+            <outputs>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 26</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 1 14 8 25 5 22 3 21</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\source\main.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 22</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 27 28 29 4 19 24 18 23 6 20 2 7 9 12</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\MKL46Z\MKL46Z\system_MKL46Z4.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 21</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 27 28 29 4 19 18 23 6 20 2 7 9 11 17 12</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\MKL46Z\MKL46Z\startup_MKL46Z4.s</name>
+            <outputs>
+                <tool>
+                    <name>AARM</name>
+                    <file> 3</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>AARM</name>
+                    <file> 10</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>[ROOT_NODE]</name>
+            <outputs>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 0 26</file>
+                </tool>
+            </outputs>
+        </file>
+        <forcedrebuild>
+            <name>[REBUILD_ALL]</name>
+        </forcedrebuild>
+    </configuration>
+    <configuration>
+        <name>Release</name>
+        <outputs />
+        <forcedrebuild>
+            <name>[MULTI_TOOL]</name>
+            <tool>ILINK</tool>
+        </forcedrebuild>
+    </configuration>
+</project>
