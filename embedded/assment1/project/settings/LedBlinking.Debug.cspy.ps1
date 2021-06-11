@@ -23,9 +23,9 @@
 
 if ($debugfile -eq "")
 {
-& "C:\Program Files\IAR Systems\Embedded Workbench 9.0\common\bin\cspybat" -f "C:\Users\ADMINT\Desktop\hoc_fresher\embedded\LedBlinking\project\settings\LedBlinking.Debug.general.xcl" --backend -f "C:\Users\ADMINT\Desktop\hoc_fresher\embedded\LedBlinking\project\settings\LedBlinking.Debug.driver.xcl" 
+& "C:\Program Files\IAR Systems\Embedded Workbench 9.0\common\bin\cspybat" -f "C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\assment1\project\settings\LedBlinking.Debug.general.xcl" --backend -f "C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\assment1\project\settings\LedBlinking.Debug.driver.xcl" 
 }
 else
 {
-& "C:\Program Files\IAR Systems\Embedded Workbench 9.0\common\bin\cspybat" -f "C:\Users\ADMINT\Desktop\hoc_fresher\embedded\LedBlinking\project\settings\LedBlinking.Debug.general.xcl" --debug_file=$debugfile --backend -f "C:\Users\ADMINT\Desktop\hoc_fresher\embedded\LedBlinking\project\settings\LedBlinking.Debug.driver.xcl" 
+& "C:\Program Files\IAR Systems\Embedded Workbench 9.0\common\bin\cspybat" -f "C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\assment1\project\settings\LedBlinking.Debug.general.xcl" --debug_file=$debugfile --backend -f "C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\assment1\project\settings\LedBlinking.Debug.driver.xcl" 
 }

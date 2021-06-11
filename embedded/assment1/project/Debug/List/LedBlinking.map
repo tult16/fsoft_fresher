@@ -1,22 +1,22 @@
 ###############################################################################
 #
-# IAR ELF Linker V9.10.2.313/W64 for ARM                  11/Jun/2021  10:45:29
+# IAR ELF Linker V9.10.2.313/W64 for ARM                  11/Jun/2021  22:41:30
 # Copyright 2007-2021 IAR Systems AB.
 #
 #    Output file  =
-#        C:\Users\ADMINT\Desktop\hoc_fresher\embedded\LedBlinking\project\Debug\Exe\LedBlinking.out
+#        C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\assment1\project\Debug\Exe\LedBlinking.out
 #    Map file     =
-#        C:\Users\ADMINT\Desktop\hoc_fresher\embedded\LedBlinking\project\Debug\List\LedBlinking.map
+#        C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\assment1\project\Debug\List\LedBlinking.map
 #    Command line =
 #        -f
-#        C:\Users\ADMINT\Desktop\hoc_fresher\embedded\LedBlinking\project\Debug\Exe\LedBlinking.out.rsp
-#        (C:\Users\ADMINT\Desktop\hoc_fresher\embedded\LedBlinking\project\Debug\Obj\source\main.o
-#        C:\Users\ADMINT\Desktop\hoc_fresher\embedded\LedBlinking\project\Debug\Obj\startup\startup_MKL46Z4.o
-#        C:\Users\ADMINT\Desktop\hoc_fresher\embedded\LedBlinking\project\Debug\Obj\startup\system_MKL46Z4.o
+#        C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\assment1\project\Debug\Exe\LedBlinking.out.rsp
+#        (C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\assment1\project\Debug\Obj\source\main.o
+#        C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\assment1\project\Debug\Obj\startup\startup_MKL46Z4.o
+#        C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\assment1\project\Debug\Obj\startup\system_MKL46Z4.o
 #        --no_out_extension -o
-#        C:\Users\ADMINT\Desktop\hoc_fresher\embedded\LedBlinking\project\Debug\Exe\LedBlinking.out
+#        C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\assment1\project\Debug\Exe\LedBlinking.out
 #        --map
-#        C:\Users\ADMINT\Desktop\hoc_fresher\embedded\LedBlinking\project\Debug\List\LedBlinking.map
+#        C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\assment1\project\Debug\List\LedBlinking.map
 #        --config "C:\Program Files\IAR Systems\Embedded Workbench
 #        9.0\arm\config\linker\NXP\MKL46Z256xxx4.icf" --semihosting --entry
 #        __iar_program_start --vfe --text_out locale)
@@ -83,39 +83,40 @@ No sections matched the following patterns:
   FlashConfig        ro code        0x400   0x10  startup_MKL46Z4.o [2]
                                   - 0x410   0x10
 
-"P1", part 2 of 2:                         0x29a
-  .text              ro code        0x410  0x1a0  main.o [1]
-  .iar.init_table    const          0x5b0   0x14  - Linker created -
-  .text              ro code        0x5c4   0x1e  cmain.o [4]
-  .text              ro code        0x5e2    0x4  low_level_init.o [3]
-  .text              ro code        0x5e6    0x8  exit.o [3]
-  .text              ro code        0x5ee    0x2  startup_MKL46Z4.o [2]
-  .text              ro code        0x5f0    0xa  cexit.o [4]
-  .text              ro code        0x5fa    0x2  startup_MKL46Z4.o [2]
-  .text              ro code        0x5fc   0x14  exit.o [5]
-  .text              ro code        0x610   0x1c  cstartup_M.o [4]
-  .text              ro code        0x62c    0xc  system_MKL46Z4.o [2]
-  .rodata            const          0x638    0x8  main.o [1]
-  .text              ro code        0x640    0x8  startup_MKL46Z4.o [2]
-  .text              ro code        0x648    0x8  startup_MKL46Z4.o [2]
-  .text              ro code        0x650    0x8  startup_MKL46Z4.o [2]
-  .text              ro code        0x658    0x8  startup_MKL46Z4.o [2]
-  .text              ro code        0x660    0x8  startup_MKL46Z4.o [2]
-  .text              ro code        0x668    0x8  startup_MKL46Z4.o [2]
-  .text              ro code        0x670    0x8  startup_MKL46Z4.o [2]
-  .text              ro code        0x678    0x8  startup_MKL46Z4.o [2]
-  .text              ro code        0x680    0x8  startup_MKL46Z4.o [2]
-  .text              ro code        0x688    0x8  startup_MKL46Z4.o [2]
-  .text              ro code        0x690    0x8  startup_MKL46Z4.o [2]
-  .text              ro code        0x698    0x8  startup_MKL46Z4.o [2]
-  .text              ro code        0x6a0    0x8  startup_MKL46Z4.o [2]
-  .text              ro code        0x6a8    0x2  startup_MKL46Z4.o [2]
-  .rodata            const          0x6aa    0x0  copy_init3.o [4]
-                                  - 0x6aa  0x29a
+"P1", part 2 of 2:                         0x29e
+  .text              ro code        0x410  0x1a4  main.o [1]
+  .iar.init_table    const          0x5b4   0x14  - Linker created -
+  .text              ro code        0x5c8   0x1e  cmain.o [4]
+  .text              ro code        0x5e6    0x4  low_level_init.o [3]
+  .text              ro code        0x5ea    0x8  exit.o [3]
+  .text              ro code        0x5f2    0x2  startup_MKL46Z4.o [2]
+  .text              ro code        0x5f4    0xa  cexit.o [4]
+  .text              ro code        0x5fe    0x2  startup_MKL46Z4.o [2]
+  .text              ro code        0x600   0x14  exit.o [5]
+  .text              ro code        0x614   0x1c  cstartup_M.o [4]
+  .text              ro code        0x630    0xc  system_MKL46Z4.o [2]
+  .rodata            const          0x63c    0x8  main.o [1]
+  .text              ro code        0x644    0x8  startup_MKL46Z4.o [2]
+  .text              ro code        0x64c    0x8  startup_MKL46Z4.o [2]
+  .text              ro code        0x654    0x8  startup_MKL46Z4.o [2]
+  .text              ro code        0x65c    0x8  startup_MKL46Z4.o [2]
+  .text              ro code        0x664    0x8  startup_MKL46Z4.o [2]
+  .text              ro code        0x66c    0x8  startup_MKL46Z4.o [2]
+  .text              ro code        0x674    0x8  startup_MKL46Z4.o [2]
+  .text              ro code        0x67c    0x8  startup_MKL46Z4.o [2]
+  .text              ro code        0x684    0x8  startup_MKL46Z4.o [2]
+  .text              ro code        0x68c    0x8  startup_MKL46Z4.o [2]
+  .text              ro code        0x694    0x8  startup_MKL46Z4.o [2]
+  .text              ro code        0x69c    0x8  startup_MKL46Z4.o [2]
+  .text              ro code        0x6a4    0x8  startup_MKL46Z4.o [2]
+  .text              ro code        0x6ac    0x2  startup_MKL46Z4.o [2]
+  .rodata            const          0x6ae    0x0  copy_init3.o [4]
+                                  - 0x6ae  0x29e
 
 "P3", part 1 of 2:                           0x4
   P3 s0                       0x1fff'e000    0x4  <Init block>
     .data            inited   0x1fff'e000    0x1  main.o [1]
+    .bss             inited   0x1fff'e001    0x1  main.o [1]
                             - 0x1fff'e004    0x4
 
 "P3", part 2 of 2:                         0x800
@@ -128,7 +129,7 @@ Unused ranges:
          From           To      Size
          ----           --      ----
         0x1f4        0x3ff     0x20c
-        0x6aa     0x3'ffff  0x3'f956
+        0x6ae     0x3'ffff  0x3'f952
   0x1fff'e004  0x1fff'e007       0x4
   0x1fff'e808  0x1fff'ffff    0x17f8
   0x2000'0000  0x2000'5fff    0x6000
@@ -141,10 +142,10 @@ Unused ranges:
           Address      Size
           -------      ----
 Copy (__iar_copy_init3)
-    1 source range, total size 0x4 (400% of destination):
+    1 source range, total size 0x4 (200% of destination):
                 0x1f0   0x4
-    1 destination range, total size 0x1:
-          0x1fff'e000   0x1
+    1 destination range, total size 0x2:
+          0x1fff'e000   0x2
 
 
 
@@ -158,12 +159,12 @@ command line/config:
     --------------------------------------------
     Total:
 
-C:\Users\ADMINT\Desktop\hoc_fresher\embedded\LedBlinking\project\Debug\Obj\source: [1]
-    main.o                 416        9        1
+C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\assment1\project\Debug\Obj\source: [1]
+    main.o                 420       10        2
     --------------------------------------------
-    Total:                 416        9        1
+    Total:                 420       10        2
 
-C:\Users\ADMINT\Desktop\hoc_fresher\embedded\LedBlinking\project\Debug\Obj\startup: [2]
+C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\assment1\project\Debug\Obj\startup: [2]
     startup_MKL46Z4.o      358
     system_MKL46Z4.o        12
     --------------------------------------------
@@ -191,9 +192,9 @@ shb_l.a: [5]
     --------------------------------------------
     Total:                  20
 
-    Linker created                   23    2'048
+    Linker created                   22    2'048
 ------------------------------------------------
-    Grand Total:         1'150       32    2'049
+    Grand Total:         1'154       32    2'050
 
 
 *******************************************************************************
@@ -202,49 +203,50 @@ shb_l.a: [5]
 
 Entry                       Address  Size  Type      Object
 -----                       -------  ----  ----      ------
-.iar.init_table$$Base         0x5b0         --   Gb  - Linker created -
-.iar.init_table$$Limit        0x5c4         --   Gb  - Linker created -
-?main                         0x5c5        Code  Gb  cmain.o [4]
+.iar.init_table$$Base         0x5b4         --   Gb  - Linker created -
+.iar.init_table$$Limit        0x5c8         --   Gb  - Linker created -
+?main                         0x5c9        Code  Gb  cmain.o [4]
 CSTACK$$Base            0x1fff'e008         --   Gb  - Linker created -
 CSTACK$$Limit           0x1fff'e808         --   Gb  - Linker created -
-Region$$Table$$Base           0x5b0         --   Gb  - Linker created -
-Region$$Table$$Limit          0x5c4         --   Gb  - Linker created -
-SystemInit                    0x62d   0x8  Code  Gb  system_MKL46Z4.o [2]
+Region$$Table$$Base           0x5b4         --   Gb  - Linker created -
+Region$$Table$$Limit          0x5c8         --   Gb  - Linker created -
+SystemInit                    0x631   0x8  Code  Gb  system_MKL46Z4.o [2]
 __Vectors                       0x0         --   Gb  startup_MKL46Z4.o [2]
 __Vectors_End                  0xc0        Data  Gb  startup_MKL46Z4.o [2]
 __Vectors_Size {Abs}           0xc0         --   Gb  startup_MKL46Z4.o [2]
 __aeabi_idiv0                 0x171        Code  Gb  IntDivZer.o [4]
 __aeabi_uidiv                  0xc1        Code  Gb  I32DivModFast.o [4]
 __aeabi_uidivmod               0xc1        Code  Gb  I32DivModFast.o [4]
-__cmain                       0x5c5        Code  Gb  cmain.o [4]
-__exit                        0x5fd  0x14  Code  Gb  exit.o [5]
+__cmain                       0x5c9        Code  Gb  cmain.o [4]
+__exit                        0x601  0x14  Code  Gb  exit.o [5]
 __iar_copy_init3              0x173  0x30  Code  Gb  copy_init3.o [4]
 __iar_data_init3              0x1a5  0x28  Code  Gb  data_init.o [4]
-__iar_program_start           0x611        Code  Gb  cstartup_M.o [4]
-__low_level_init              0x5e3   0x4  Code  Gb  low_level_init.o [3]
+__iar_program_start           0x615        Code  Gb  cstartup_M.o [4]
+__low_level_init              0x5e7   0x4  Code  Gb  low_level_init.o [3]
 __vector_table                  0x0        Data  Gb  startup_MKL46Z4.o [2]
 __vector_table_0x1c            0x1c        Data  Gb  startup_MKL46Z4.o [2]
-_call_main                    0x5d1        Code  Gb  cmain.o [4]
-_exit                         0x5f1        Code  Gb  cexit.o [4]
+_call_main                    0x5d5        Code  Gb  cmain.o [4]
+_exit                         0x5f5        Code  Gb  cexit.o [4]
 delay_ms                      0x411  0x10  Code  Gb  main.o [1]
-exit                          0x5e7   0x8  Code  Gb  exit.o [3]
+exit                          0x5eb   0x8  Code  Gb  exit.o [3]
 g_CurrentMode           0x1fff'e000   0x1  Data  Gb  main.o [1]
 gen_one_pwm_period            0x421  0x3c  Code  Gb  main.o [1]
-init_pin                      0x501  0x54  Code  Gb  main.o [1]
-main                          0x555  0x28  Code  Gb  main.o [1]
+init_pin                      0x509  0x54  Code  Gb  main.o [1]
+main                          0x55d  0x20  Code  Gb  main.o [1]
 mode_one                      0x45d  0x52  Code  Gb  main.o [1]
-mode_two                      0x4af  0x52  Code  Gb  main.o [1]
+mode_two                      0x4af  0x5a  Code  Gb  main.o [1]
+mode_two::count         0x1fff'e001   0x1  Data  Lc  main.o [1]
 
 
-[1] = C:\Users\ADMINT\Desktop\hoc_fresher\embedded\LedBlinking\project\Debug\Obj\source
-[2] = C:\Users\ADMINT\Desktop\hoc_fresher\embedded\LedBlinking\project\Debug\Obj\startup
+[1] = C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\assment1\project\Debug\Obj\source
+[2] = C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\assment1\project\Debug\Obj\startup
 [3] = dl6M_tln.a
 [4] = rt6M_tl.a
 [5] = shb_l.a
 
-  1'150 bytes of readonly  code memory
+  1'154 bytes of readonly  code memory
      32 bytes of readonly  data memory
-  2'049 bytes of readwrite data memory
+  2'050 bytes of readwrite data memory
 
 Errors: none
 Warnings: none

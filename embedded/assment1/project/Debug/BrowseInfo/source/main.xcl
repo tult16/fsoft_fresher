@@ -1,21 +1,21 @@
-"C:\Users\ADMINT\Desktop\hoc_fresher\embedded\LedBlinking\source\main.c"
+"C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\assment1\source\main.c"
 -std=c11
 -ferror-limit=0
 -fbracket-depth=512
 -funsigned-char
 -MD
 -MF
-C:\Users\ADMINT\Desktop\hoc_fresher\embedded\LedBlinking\project\Debug\BrowseInfo\source\main.pbi.dep
+C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\assment1\project\Debug\BrowseInfo\source\main.pbi.dep
 -o
-C:\Users\ADMINT\Desktop\hoc_fresher\embedded\LedBlinking\project\Debug\BrowseInfo\source\main.pbi
+C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\assment1\project\Debug\BrowseInfo\source\main.pbi
 -I
-C:\Users\ADMINT\Desktop\hoc_fresher\embedded\LedBlinking\source
+C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\assment1\source
 -I
-C:\Users\ADMINT\Desktop\hoc_fresher\embedded\LedBlinking\project\..\CMSIS\CMSIS\Include
+C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\assment1\project\..\CMSIS\CMSIS\Include
 -I
-C:\Users\ADMINT\Desktop\hoc_fresher\embedded\LedBlinking\project\..\MKL46Z\MKL46Z
+C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\assment1\project\..\MKL46Z\MKL46Z
 -I
-C:\Users\ADMINT\Desktop\hoc_fresher\embedded\LedBlinking\project\..\source
+C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\assment1\project\..\source
 -I
 C:\Program Files\IAR Systems\Embedded Workbench 9.0\arm\inc\c\aarch32
 -I
@@ -23,11 +23,11 @@ C:\Program Files\IAR Systems\Embedded Workbench 9.0\arm\inc
 -I
 C:\Program Files\IAR Systems\Embedded Workbench 9.0\arm\inc\c
 -I
-C:\Users\ADMINT\Desktop\hoc_fresher\embedded\LedBlinking\CMSIS\CMSIS\Include
+C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\assment1\CMSIS\CMSIS\Include
 -I
-C:\Users\ADMINT\Desktop\hoc_fresher\embedded\LedBlinking\MKL46Z\MKL46Z
+C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\assment1\MKL46Z\MKL46Z
 -I
-C:\Users\ADMINT\Desktop\hoc_fresher\embedded\LedBlinking\source
+C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\assment1\source
 -D__CHAR_BITS__=8
 -D__CHAR_MAX__=0xff
 -D__CHAR_MIN__=0

@@ -61,18 +61,21 @@ void mode_one(void)
            break;
         }
         increase = !increase;
-        for (i = 0; i <= 100; i+=10)    /* Loop increases duty each by 10% */
+        /* Loop to change duty for each step is 10% */
+        for (i = 0; i <= 100; i+=10)
         {
             /* Change duty cycle for each 1s*/
             for (j = 0; j < PERIOD_1S/10/PWM_PERIOD; j++)
             {
                 if (increase == true)
                 {
-                    gen_one_pwm_period(i);          /* Generate one pwm period with duty increases 0%,10%,20%,30%,40%,50%,60%,70%,80%,90%,100% */
+                    /* Generate pwm with duty cycles from 0% to 100% */
+                    gen_one_pwm_period(i);
                 }
                 else
                 {
-                    gen_one_pwm_period(100 - i);    /* Generate one pwm period with duty decrease 100%,90%,80%,70%,60%,50%,40%,30%,20%,10%,0% */
+                    /* Generate pwm with duty cycles from 100% to 0% */
+                    gen_one_pwm_period(100 - i);
                 }
             }
         }
@@ -80,10 +83,11 @@ void mode_one(void)
 }
 
 /* Function mode 2: led red light up with duty from 0%, 25%, 50%, 75%, 100% after return 0% */
-void mode_two(uint8_t *count)
+void mode_two(void)
 {
     uint8_t j;
-    uint8_t dutyCycle[DUTY_ARRAY_MEMBER]= {0,25,50,75,100};
+    uint8_t dutyCycle[DUTY_ARRAY_MEMBER]= {0, 25, 50, 75, 100};
+    static uint8_t count = 0; /*count when SW1 is press in mode 2 to set PWM duty cycle*/
 
     while (1)
     {
@@ -95,16 +99,18 @@ void mode_two(uint8_t *count)
 
         if (SWITCH_ON == BUTTON1_LEVEL)
         {
-           (*count)++;/* Count is index array dutyCycle[] */
+            /* increase duty cycle when sw1 is pressed */
+           count++;
         }
-        if (*count >= DUTY_ARRAY_MEMBER )
+        if (count >= DUTY_ARRAY_MEMBER)
         {
-            *count = 0;/* Reset count = 0 if count greater than or equal to DUTY_ARRAY_MEMBER */
+            /* Reset count = 0 to change duty cycles from 100% to 0% */
+            count = 0;
         }
-        /* Wait 0.5s to check button */
+        /* generate pwm in 0.5s then check button status */
         for (j = 0; j < PERIOD_1S/2/10/PWM_PERIOD; j++)
         {
-            gen_one_pwm_period(dutyCycle[*count]);
+            gen_one_pwm_period(dutyCycle[count]);
         }
     }
 }
@@ -127,8 +133,6 @@ void init_pin(void)
 
 int main()
 {
-    uint8_t count = 0;    /* Count button presses*/
-
     init_pin();
     while(1)
     {
@@ -138,7 +142,7 @@ int main()
                 mode_one();
                 break;
             case 2:
-                mode_two(&count);
+                mode_two();
                 break;
             default:
                 break;
