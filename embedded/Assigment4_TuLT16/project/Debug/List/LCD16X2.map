@@ -1,0 +1,326 @@
+###############################################################################
+#
+# IAR ELF Linker V9.10.2.313/W64 for ARM                  29/Jun/2021  00:50:58
+# Copyright 2007-2021 IAR Systems AB.
+#
+#    Output file  =
+#        C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assigment2_TuLT16\project\Debug\Exe\LCD16X2.out
+#    Map file     =
+#        C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assigment2_TuLT16\project\Debug\List\LCD16X2.map
+#    Command line =
+#        -f
+#        C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assigment2_TuLT16\project\Debug\List\LCD16X2.map.rsp
+#        (C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assigment2_TuLT16\project\Debug\Obj\source\Board_setting\board_setting.o
+#        C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assigment2_TuLT16\project\Debug\Obj\source\DRIVER_adc\DRIVER_adc.o
+#        C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assigment2_TuLT16\project\Debug\Obj\source\DRIVE_gpio\DRIVER_gpio.o
+#        C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assigment2_TuLT16\project\Debug\Obj\source\HAL_gpio\HAL_gpio.o
+#        C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assigment2_TuLT16\project\Debug\Obj\source\HAL_port\HAL_port.o
+#        C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assigment2_TuLT16\project\Debug\Obj\source\DRIVER_lcd\lcd.o
+#        C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assigment2_TuLT16\project\Debug\Obj\source\main.o
+#        C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assigment2_TuLT16\project\Debug\Obj\startup\startup_MKL46Z4.o
+#        C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assigment2_TuLT16\project\Debug\Obj\startup\system_MKL46Z4.o
+#        --no_out_extension -o
+#        C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assigment2_TuLT16\project\Debug\Exe\LCD16X2.out
+#        --map
+#        C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assigment2_TuLT16\project\Debug\List\LCD16X2.map
+#        --config "C:\Program Files\IAR Systems\Embedded Workbench
+#        9.0\arm\config\linker\NXP\MKL46Z256xxx4.icf" --semihosting --entry
+#        __iar_program_start --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because some modules are built with
+size limitations (and not runtime checking), and --advanced_heap
+was not specified.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at address 0x0 { ro section .intvec };
+"P1":  place in [from 0x0 to 0x3ff] |
+                [from 0x410 to 0x3'ffff] { ro };
+define block CSTACK with size = 2K, alignment = 8 { };
+define block HEAP with size = 4K, alignment = 8 { };
+"P3":  place in [from 0x1fff'e000 to 0x1fff'ffff] |
+                [from 0x2000'0000 to 0x2000'5fff] {
+          rw, block CSTACK, block HEAP };
+"P5":  place in [from 0x400 to 0x40f] { section FlashConfig };
+initialize by copy { rw };
+
+No sections matched the following patterns:
+
+  ro section application_specific_ro  in "P2|P4"
+  rw section application_specific_rw  in "P2|P4"
+
+
+  Section            Kind         Address   Size  Object
+  -------            ----         -------   ----  ------
+"A0":                                       0xc0
+  .intvec            ro code          0x0   0xc0  startup_MKL46Z4.o [8]
+                                   - 0xc0   0xc0
+
+"P1", part 1 of 2:                         0x1fc
+  .text              ro code         0xc0   0x36  HAL_port.o [7]
+  .text              ro code         0xf6   0x42  HAL_gpio.o [6]
+  .text              ro code        0x138    0x2  startup_MKL46Z4.o [8]
+  .text              ro code        0x13c    0x2  IntDivZer.o [10]
+  .text              ro code        0x13e    0x2  startup_MKL46Z4.o [8]
+  .text              ro code        0x140   0x9c  DRIVER_adc.o [3]
+  Initializer bytes  const          0x1dc   0xe0  <for P3 s0>
+                                  - 0x2bc  0x1fc
+
+"P5":                                       0x10
+  FlashConfig        ro code        0x400   0x10  startup_MKL46Z4.o [8]
+                                  - 0x410   0x10
+
+"P1", part 2 of 2:                         0x5c6
+  .text              ro code        0x410  0x18c  DRIVER_gpio.o [5]
+  .text              ro code        0x59c  0x146  lcd.o [4]
+  .text              ro code        0x6e2   0xe0  I32DivModFast.o [10]
+  .text              ro code        0x7c4   0x74  main.o [1]
+  .text              ro code        0x838   0x28  board_setting.o [2]
+  .text              ro code        0x860   0x30  copy_init3.o [10]
+  .text              ro code        0x890   0x28  data_init.o [10]
+  .text              ro code        0x8b8   0x24  startup_MKL46Z4.o [8]
+  .iar.init_table    const          0x8dc   0x14  - Linker created -
+  .text              ro code        0x8f0   0x1e  cmain.o [10]
+  .text              ro code        0x90e    0x4  low_level_init.o [9]
+  .text              ro code        0x912    0x8  exit.o [9]
+  .text              ro code        0x91a    0x2  startup_MKL46Z4.o [8]
+  .text              ro code        0x91c    0xa  cexit.o [10]
+  .text              ro code        0x926    0x2  startup_MKL46Z4.o [8]
+  .text              ro code        0x928   0x14  exit.o [11]
+  .text              ro code        0x93c   0x1c  cstartup_M.o [10]
+  .text              ro code        0x958    0xc  system_MKL46Z4.o [8]
+  .rodata            const          0x964    0x8  main.o [1]
+  .text              ro code        0x96c    0x8  startup_MKL46Z4.o [8]
+  .text              ro code        0x974    0x8  startup_MKL46Z4.o [8]
+  .text              ro code        0x97c    0x8  startup_MKL46Z4.o [8]
+  .text              ro code        0x984    0x8  startup_MKL46Z4.o [8]
+  .text              ro code        0x98c    0x8  startup_MKL46Z4.o [8]
+  .text              ro code        0x994    0x8  startup_MKL46Z4.o [8]
+  .text              ro code        0x99c    0x8  startup_MKL46Z4.o [8]
+  .text              ro code        0x9a4    0x8  startup_MKL46Z4.o [8]
+  .text              ro code        0x9ac    0x8  startup_MKL46Z4.o [8]
+  .text              ro code        0x9b4    0x8  startup_MKL46Z4.o [8]
+  .text              ro code        0x9bc    0x8  startup_MKL46Z4.o [8]
+  .text              ro code        0x9c4    0x8  startup_MKL46Z4.o [8]
+  .text              ro code        0x9cc    0x8  startup_MKL46Z4.o [8]
+  .text              ro code        0x9d4    0x2  startup_MKL46Z4.o [8]
+  .rodata            const          0x9d6    0x0  copy_init3.o [10]
+                                  - 0x9d6  0x5c6
+
+"P3", part 1 of 2:                          0xe0
+  P3 s0                       0x1fff'e000   0xe0  <Init block>
+    .data            inited   0x1fff'e000   0xdc  board_setting.o [2]
+    .data            inited   0x1fff'e0dc    0x4  DRIVER_adc.o [3]
+                            - 0x1fff'e0e0   0xe0
+
+"P3", part 2 of 2:                         0x800
+  CSTACK                      0x1fff'e0e0  0x800  <Block>
+    CSTACK           uninit   0x1fff'e0e0  0x800  <Block tail>
+                            - 0x1fff'e8e0  0x800
+
+Unused ranges:
+
+         From           To      Size
+         ----           --      ----
+        0x2bc        0x3ff     0x144
+        0x9d6     0x3'ffff  0x3'f62a
+  0x1fff'e8e0  0x1fff'ffff    0x1720
+  0x2000'0000  0x2000'5fff    0x6000
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address      Size
+          -------      ----
+Copy (__iar_copy_init3)
+    1 source range, total size 0xe0:
+                0x1dc  0xe0
+    1 destination range, total size 0xe0:
+          0x1fff'e000  0xe0
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module             ro code  ro data  rw data
+    ------             -------  -------  -------
+command line/config:
+    --------------------------------------------
+    Total:
+
+C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assigment2_TuLT16\project\Debug\Obj\source: [1]
+    main.o                 116        8
+    --------------------------------------------
+    Total:                 116        8
+
+C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assigment2_TuLT16\project\Debug\Obj\source\Board_setting: [2]
+    board_setting.o         40      220      220
+    --------------------------------------------
+    Total:                  40      220      220
+
+C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assigment2_TuLT16\project\Debug\Obj\source\DRIVER_adc: [3]
+    DRIVER_adc.o           156        4        4
+    --------------------------------------------
+    Total:                 156        4        4
+
+C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assigment2_TuLT16\project\Debug\Obj\source\DRIVER_lcd: [4]
+    lcd.o                  326
+    --------------------------------------------
+    Total:                 326
+
+C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assigment2_TuLT16\project\Debug\Obj\source\DRIVE_gpio: [5]
+    DRIVER_gpio.o          396
+    --------------------------------------------
+    Total:                 396
+
+C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assigment2_TuLT16\project\Debug\Obj\source\HAL_gpio: [6]
+    HAL_gpio.o              66
+    --------------------------------------------
+    Total:                  66
+
+C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assigment2_TuLT16\project\Debug\Obj\source\HAL_port: [7]
+    HAL_port.o              54
+    --------------------------------------------
+    Total:                  54
+
+C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assigment2_TuLT16\project\Debug\Obj\startup: [8]
+    startup_MKL46Z4.o      358
+    system_MKL46Z4.o        12
+    --------------------------------------------
+    Total:                 370
+
+dl6M_tln.a: [9]
+    exit.o                   8
+    low_level_init.o         4
+    --------------------------------------------
+    Total:                  12
+
+rt6M_tl.a: [10]
+    I32DivModFast.o        224
+    IntDivZer.o              2
+    cexit.o                 10
+    cmain.o                 30
+    copy_init3.o            48
+    cstartup_M.o            28
+    data_init.o             40
+    --------------------------------------------
+    Total:                 382
+
+shb_l.a: [11]
+    exit.o                  20
+    --------------------------------------------
+    Total:                  20
+
+    Gaps                     4
+    Linker created                   20    2'048
+------------------------------------------------
+    Grand Total:         1'942      252    2'272
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address   Size  Type      Object
+-----                       -------   ----  ----      ------
+.iar.init_table$$Base         0x8dc          --   Gb  - Linker created -
+.iar.init_table$$Limit        0x8f0          --   Gb  - Linker created -
+?main                         0x8f1         Code  Gb  cmain.o [10]
+BoardClockGate                0x839   0x28  Code  Gb  board_setting.o [2]
+CSTACK$$Base            0x1fff'e0e0          --   Gb  - Linker created -
+CSTACK$$Limit           0x1fff'e8e0          --   Gb  - Linker created -
+DRV_ADC_GetConvCompleteFlag
+                              0x1a5   0x16  Code  Gb  DRIVER_adc.o [3]
+DRV_ADC_GetDataResult         0x195   0x10  Code  Gb  DRIVER_adc.o [3]
+DRV_ADC_Init                  0x141   0x54  Code  Gb  DRIVER_adc.o [3]
+DRV_ADC_StartConv             0x1bb   0x1c  Code  Gb  DRIVER_adc.o [3]
+DRV_Delay                     0x691   0x10  Code  Gb  lcd.o [4]
+DRV_GPIO_ClearPin             0x593    0xa  Code  Gb  DRIVER_gpio.o [5]
+DRV_GPIO_SetPin               0x589    0xa  Code  Gb  DRIVER_gpio.o [5]
+DRV_GPIO_WritePins            0x581    0x8  Code  Gb  DRIVER_gpio.o [5]
+DRV_InitGPIO                  0x411  0x170  Code  Gb  DRIVER_gpio.o [5]
+HAL_GPIO_ClearPin             0x131    0x8  Code  Gb  HAL_gpio.o [6]
+HAL_GPIO_SetDirection          0xf7   0x16  Code  Gb  HAL_gpio.o [6]
+HAL_GPIO_SetPin               0x129    0x8  Code  Gb  HAL_gpio.o [6]
+HAL_GPIO_WritePin             0x10d   0x16  Code  Gb  HAL_gpio.o [6]
+HAL_GPIO_WritePins            0x123    0x6  Code  Gb  HAL_gpio.o [6]
+HAL_PORT_ConfigPassiveFilter
+                               0xf3    0x2  Code  Gb  HAL_port.o [7]
+HAL_PORT_MuxConfig             0xc1   0x28  Code  Gb  HAL_port.o [7]
+HAL_PORT_SetDriveStrength
+                               0xef    0x2  Code  Gb  HAL_port.o [7]
+HAL_PORT_SetIntConfig          0xed    0x2  Code  Gb  HAL_port.o [7]
+HAL_PORT_SetPullSelect         0xf5    0x2  Code  Gb  HAL_port.o [7]
+HAL_PORT_SetSlewRate           0xf1    0x2  Code  Gb  HAL_port.o [7]
+LCD_Init                      0x59d   0x1c  Code  Gb  lcd.o [4]
+LCD_Int2String                0x6a1   0x42  Code  Gb  lcd.o [4]
+LCD_Send_CMD                  0x5b9   0x50  Code  Gb  lcd.o [4]
+LCD_Send_Data                 0x609   0x50  Code  Gb  lcd.o [4]
+LCD_Send_String               0x659   0x2e  Code  Gb  lcd.o [4]
+Region$$Table$$Base           0x8dc          --   Gb  - Linker created -
+Region$$Table$$Limit          0x8f0          --   Gb  - Linker created -
+SystemInit                    0x959    0x8  Code  Gb  system_MKL46Z4.o [8]
+__Vectors                       0x0          --   Gb  startup_MKL46Z4.o [8]
+__Vectors_End                  0xc0         Data  Gb  startup_MKL46Z4.o [8]
+__Vectors_Size {Abs}           0xc0          --   Gb  startup_MKL46Z4.o [8]
+__aeabi_idiv                  0x70f         Code  Gb  I32DivModFast.o [10]
+__aeabi_idiv0                 0x13d         Code  Gb  IntDivZer.o [10]
+__aeabi_idivmod               0x70f         Code  Gb  I32DivModFast.o [10]
+__aeabi_uidiv                 0x715         Code  Gb  I32DivModFast.o [10]
+__aeabi_uidivmod              0x715         Code  Gb  I32DivModFast.o [10]
+__cmain                       0x8f1         Code  Gb  cmain.o [10]
+__exit                        0x929   0x14  Code  Gb  exit.o [11]
+__iar_copy_init3              0x861   0x30  Code  Gb  copy_init3.o [10]
+__iar_data_init3              0x891   0x28  Code  Gb  data_init.o [10]
+__iar_program_start           0x93d         Code  Gb  cstartup_M.o [10]
+__low_level_init              0x90f    0x4  Code  Gb  low_level_init.o [9]
+__vector_table                  0x0         Data  Gb  startup_MKL46Z4.o [8]
+__vector_table_0x1c            0x1c         Data  Gb  startup_MKL46Z4.o [8]
+_call_main                    0x8fd         Code  Gb  cmain.o [10]
+_exit                         0x91d         Code  Gb  cexit.o [10]
+exit                          0x913    0x8  Code  Gb  exit.o [9]
+g_pinConfigArr          0x1fff'e000   0xdc  Data  Gb  board_setting.o [2]
+main                          0x7c5   0x74  Code  Gb  main.o [1]
+s_adcBaseAddr           0x1fff'e0dc    0x4  Data  Lc  DRIVER_adc.o [3]
+
+
+[1] = C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assigment2_TuLT16\project\Debug\Obj\source
+[2] = C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assigment2_TuLT16\project\Debug\Obj\source\Board_setting
+[3] = C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assigment2_TuLT16\project\Debug\Obj\source\DRIVER_adc
+[4] = C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assigment2_TuLT16\project\Debug\Obj\source\DRIVER_lcd
+[5] = C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assigment2_TuLT16\project\Debug\Obj\source\DRIVE_gpio
+[6] = C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assigment2_TuLT16\project\Debug\Obj\source\HAL_gpio
+[7] = C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assigment2_TuLT16\project\Debug\Obj\source\HAL_port
+[8] = C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assigment2_TuLT16\project\Debug\Obj\startup
+[9] = dl6M_tln.a
+[10] = rt6M_tl.a
+[11] = shb_l.a
+
+  1'942 bytes of readonly  code memory
+    252 bytes of readonly  data memory
+  2'272 bytes of readwrite data memory
+
+Errors: none
+Warnings: none
