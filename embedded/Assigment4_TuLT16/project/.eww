@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspace>
+    <project>
+        <path>$WS_DIR$\..\..\Assigment3_TuLT16\project\assigment3_TuLT16.ewp</path>
+    </project>
+    <project>
+        <path>$WS_DIR$\LCD16X2.ewp</path>
+    </project>
+    <batchBuild />
+</workspace>

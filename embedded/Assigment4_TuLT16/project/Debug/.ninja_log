@@ -1,0 +1,23 @@
+# ninja log v5
+1583	1842	6466366592767716	C:/Users/ADMINT/Desktop/hoc_fresher/Mock1/git_mock/fsoft_fresher/embedded/Assigment4_TuLT16/project/Debug/Exe/asssignment4_TuLT16.out	4176b7e5d9538d44
+7	103	6466383277792596	C:/Users/ADMINT/Desktop/hoc_fresher/Mock1/git_mock/fsoft_fresher/embedded/Assigment4_TuLT16/project/Debug/Obj/startup/startup_MKL46Z4.o	9a8fb69f6a2a72fd
+108	674	6466383283307469	C:/Users/ADMINT/Desktop/hoc_fresher/Mock1/git_mock/fsoft_fresher/embedded/Assigment4_TuLT16/project/Debug/Obj/source/DRIVER_gpio/DRIVER_gpio.o	5bb3f8a244258138
+563	877	6466383285235676	C:/Users/ADMINT/Desktop/hoc_fresher/Mock1/git_mock/fsoft_fresher/embedded/Assigment4_TuLT16/project/Debug/Obj/source/Board_setting/board_setting.o	8a5c9151df4a025a
+16	551	6466383282128552	C:/Users/ADMINT/Desktop/hoc_fresher/Mock1/git_mock/fsoft_fresher/embedded/Assigment4_TuLT16/project/Debug/Obj/source/DRIVER_adc/DRIVER_adc.o	d6e5e2207fd2d7c8
+840	1181	6466366585867792	C:/Users/ADMINT/Desktop/hoc_fresher/Mock1/git_mock/fsoft_fresher/embedded/Assigment4_TuLT16/project/Debug/Obj/startup/system_MKL46Z4.o	4deec66a9d64cf50
+1241	1558	6466383291948008	C:/Users/ADMINT/Desktop/hoc_fresher/Mock1/git_mock/fsoft_fresher/embedded/Assigment4_TuLT16/project/Debug/Obj/main.o	c166286122b6ee58
+809	1209	6466383288362761	C:/Users/ADMINT/Desktop/hoc_fresher/Mock1/git_mock/fsoft_fresher/embedded/Assigment4_TuLT16/project/Debug/Obj/source/DRIVER_lcd/lcd.o	84137634154c66b0
+1221	1539	6466383291878068	C:/Users/ADMINT/Desktop/hoc_fresher/Mock1/git_mock/fsoft_fresher/embedded/Assigment4_TuLT16/project/Debug/Obj/source/HAL_port/HAL_port.o	d64414cf733cc95f
+888	1228	6466383288623215	C:/Users/ADMINT/Desktop/hoc_fresher/Mock1/git_mock/fsoft_fresher/embedded/Assigment4_TuLT16/project/Debug/Obj/source/HAL_gpio/HAL_gpio.o	3cc134594acfe472
+789	1102	6466366585108501	C:/Users/ADMINT/Desktop/hoc_fresher/Mock1/git_mock/fsoft_fresher/embedded/Assigment4_TuLT16/project/Debug/Obj/source/main.o	58b3e1189937ec02
+1583	1842	6466366592767716	C:/Users/ADMINT/Desktop/hoc_fresher/Mock1/git_mock/fsoft_fresher/embedded/Assigment4_TuLT16/project/Debug/List/asssignment4_TuLT16.map	4176b7e5d9538d44
+2	35	6466385155376640	C:/Users/ADMINT/Desktop/hoc_fresher/Mock1/git_mock/fsoft_fresher/embedded/Assigment4_TuLT16/project/Debug/Obj/startup/startup_MKL46Z4.o	9a8fb69f6a2a72fd
+9	287	6466385157564596	C:/Users/ADMINT/Desktop/hoc_fresher/Mock1/git_mock/fsoft_fresher/embedded/Assigment4_TuLT16/project/Debug/Obj/source/Board_setting/board_setting.o	84974f48cc344fe6
+40	335	6466385157814366	C:/Users/ADMINT/Desktop/hoc_fresher/Mock1/git_mock/fsoft_fresher/embedded/Assigment4_TuLT16/project/Debug/Obj/source/DRIVER_adc/DRIVER_adc.o	4e56f3f02b7617a3
+299	610	6466385160962762	C:/Users/ADMINT/Desktop/hoc_fresher/Mock1/git_mock/fsoft_fresher/embedded/Assigment4_TuLT16/project/Debug/Obj/source/DRIVER_gpio/DRIVER_gpio.o	a1b02c220255c2bb
+348	628	6466385160982755	C:/Users/ADMINT/Desktop/hoc_fresher/Mock1/git_mock/fsoft_fresher/embedded/Assigment4_TuLT16/project/Debug/Obj/startup/system_MKL46Z4.o	4deec66a9d64cf50
+622	942	6466385164223645	C:/Users/ADMINT/Desktop/hoc_fresher/Mock1/git_mock/fsoft_fresher/embedded/Assigment4_TuLT16/project/Debug/Obj/main.o	35601b2f9b595d95
+641	993	6466385164633606	C:/Users/ADMINT/Desktop/hoc_fresher/Mock1/git_mock/fsoft_fresher/embedded/Assigment4_TuLT16/project/Debug/Obj/source/DRIVER_lcd/lcd.o	f9330f697fc17fd6
+953	1270	6466385167484233	C:/Users/ADMINT/Desktop/hoc_fresher/Mock1/git_mock/fsoft_fresher/embedded/Assigment4_TuLT16/project/Debug/Obj/source/HAL_gpio/HAL_gpio.o	d2848773a65d0e5b
+1005	1305	6466385167784266	C:/Users/ADMINT/Desktop/hoc_fresher/Mock1/git_mock/fsoft_fresher/embedded/Assigment4_TuLT16/project/Debug/Obj/source/HAL_port/HAL_port.o	9e60384ce0805fcc
+1317	1561	6466385170094504	C:/Users/ADMINT/Desktop/hoc_fresher/Mock1/git_mock/fsoft_fresher/embedded/Assigment4_TuLT16/project/Debug/Exe/asssignment4_TuLT16.out	ff46f14b23ab96ff

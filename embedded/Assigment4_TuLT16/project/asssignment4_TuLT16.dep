@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+    <fileVersion>5</fileVersion>
+    <fileChecksum>3571114312</fileChecksum>
+    <configuration>
+        <name>Debug</name>
+        <outputs>
+            <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\source\DRIVER_lcd\lcd.o</file>
+            <file>$PROJ_DIR$\..\MKL46Z\MKL46Z\fsl_device_registers.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\startup\startup_MKL46Z4.o.rsp</file>
+            <file>$PROJ_DIR$\Debug\Obj\main.o</file>
+            <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\source\HAL_gpio\HAL_gpio.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\startup\system_MKL46Z4.o</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Normal.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdbool.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\startup\startup_MKL46Z4.o</file>
+            <file>$PROJ_DIR$\Debug\Exe\asssignment4_TuLT16.out</file>
+            <file>$PROJ_DIR$\..\source\DRIVER_gpio.c</file>
+            <file>$PROJ_DIR$\..\source\board_setting.h</file>
+            <file>$PROJ_DIR$\..\source\DRIVER_adc.c</file>
+            <file>$PROJ_DIR$\..\source\board_setting.c</file>
+            <file>$PROJ_DIR$\..\source\DRIVER_adc.h</file>
+            <file>$PROJ_DIR$\..\MKL46Z\MKL46Z\system_MKL46Z4.h</file>
+            <file>$PROJ_DIR$\..\source\main.c</file>
+            <file>$PROJ_DIR$\Debug\Obj\source\HAL_port\HAL_port.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\source\DRIVER_gpio\DRIVER_gpio.o</file>
+            <file>$PROJ_DIR$\..\source\HAL_port.c</file>
+            <file>$PROJ_DIR$\..\source\port_gpio.h</file>
+            <file>$PROJ_DIR$\..\source\HAL_gpio.c</file>
+            <file>$PROJ_DIR$\Debug\Obj\source\DRIVER_adc\DRIVER_adc.o</file>
+            <file>$PROJ_DIR$\..\source\HAL_gpio.h</file>
+            <file>$PROJ_DIR$\..\source\HAL_port.h</file>
+            <file>$PROJ_DIR$\..\source\lcd.h</file>
+            <file>$PROJ_DIR$\..\source\lcd.c</file>
+            <file>$PROJ_DIR$\..\MKL46Z\MKL46Z\startup_MKL46Z4.s</file>
+            <file>$PROJ_DIR$\..\MKL46Z\MKL46Z\system_MKL46Z4.c</file>
+            <file>$PROJ_DIR$\Debug\Obj\source\Board_setting\board_setting.o</file>
+            <file>$PROJ_DIR$\..\source\DRIVER_gpio.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\aarch32\cmsis_iar.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\string.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\aarch32\iccarm_builtin.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\ysizet.h</file>
+            <file>$PROJ_DIR$\..\CMSIS\CMSIS\Include\core_cmFunc.h</file>
+            <file>$PROJ_DIR$\..\CMSIS\CMSIS\Include\core_cm0plus.h</file>
+            <file>$PROJ_DIR$\..\CMSIS\CMSIS\Include\core_cmInstr.h</file>
+            <file>$PROJ_DIR$\..\MKL46Z\MKL46Z\MKL46Z4.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Product_string.h</file>
+            <file>$TOOLKIT_DIR$\lib\dl6M_tln.a</file>
+            <file>$TOOLKIT_DIR$\lib\shb_l.a</file>
+            <file>$TOOLKIT_DIR$\lib\rt6M_tl.a</file>
+            <file>$PROJ_DIR$\..\MKL46Z\MKL46Z\MKL46Z4_features.h</file>
+            <file>$TOOLKIT_DIR$\lib\m6M_tl.a</file>
+            <file>$PROJ_DIR$\Debug\List\asssignment4_TuLT16.map</file>
+            <file>$TOOLKIT_DIR$\config\linker\NXP\MKL46Z256xxx4.icf</file>
+        </outputs>
+        <file>
+            <name>$PROJ_DIR$\Debug\Exe\asssignment4_TuLT16.out</name>
+            <outputs>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 50</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 51 45 49 47 46 6 34 27 23 2 8 22 13 9</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\source\DRIVER_gpio.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 23</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 10 1 4 36 38 11 0 12 7 41 40 42 43 20 35 28 29 25</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\source\DRIVER_adc.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 27</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 10 1 4 36 38 11 0 12 7 41 40 42 43 20 19</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\source\board_setting.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 34</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 10 1 4 36 38 11 0 12 7 41 40 42 43 20 35 28 29 16 25</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>[ROOT_NODE]</name>
+            <outputs>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 14 50</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\source\main.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 6</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 10 1 4 44 36 38 11 0 37 12 39 7 41 40 42 43 20 19 35 28 29 16 30 25</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\source\HAL_port.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 22</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 10 1 4 36 38 11 0 12 7 41 40 42 43 20 29 25</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\source\HAL_gpio.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 8</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 10 1 4 36 38 11 0 12 7 41 40 42 43 20 28 25</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\source\lcd.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 2</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 10 1 4 36 38 11 0 12 7 41 40 42 43 20 35 28 29 30 25</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\MKL46Z\MKL46Z\startup_MKL46Z4.s</name>
+            <outputs>
+                <tool>
+                    <name>AARM</name>
+                    <file> 13</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>AARM</name>
+                    <file> 5</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\MKL46Z\MKL46Z\system_MKL46Z4.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 9</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 10 1 4 36 38 0 12 7 41 40 42 43 48 3 20</file>
+                </tool>
+            </inputs>
+        </file>
+        <forcedrebuild>
+            <name>[REBUILD_ALL]</name>
+        </forcedrebuild>
+    </configuration>
+    <configuration>
+        <name>Release</name>
+        <outputs />
+        <forcedrebuild>
+            <name>[MULTI_TOOL]</name>
+            <tool>ILINK</tool>
+        </forcedrebuild>
+    </configuration>
+</project>
