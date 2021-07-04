@@ -11,7 +11,7 @@
 #define S19_CHECKSUM_BYTE_COUNT     2
 #define S19_RECORD_TYPE_BYTE_COUNT  2
 
-bool srecParse(char *str, uint8_t size);
+bool srecParse(char *str);
 bool checkCheckSum(char str[], int length);
 bool checkData(char str[], int length, int addressByte, char s19Data[]);
 bool checkAddress(char str[], char recordType, uint8_t *addressByte, char s19Address[]);

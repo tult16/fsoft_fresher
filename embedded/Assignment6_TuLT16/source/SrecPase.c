@@ -6,39 +6,23 @@
 #define SIZE 255
 
 
-bool srecParse(char *str, uint8_t size)
+bool srecParse(char *str)
 {
     bool check = false;
     char recordType;
     char address[SIZE];
     char data[SIZE];
     uint8_t addressByte;
+    uint8_t str_size;
+
+    str_size = strlen(str);
+
     check = checkRecordStart(str[0]);
-    if (check == false)
-    {
-        check = false;
-    }
     check &= checkRecordType(str[1], &recordType);
-    if (check == false)
-    {
-        check = false;
-    }
-    check &= checkByteCount(str, size);
-    if (check == false)
-    {
-        check = false;
-    }
+    check &= checkByteCount(str, str_size);
     check &= checkAddress(str, recordType, &addressByte, address);
-    if (check == false)
-    {
-        check = false;
-    }
-    check &= checkData(str, size, addressByte, data);
-    if (check == false)
-    {
-        check = false;
-    }
-    check &= checkCheckSum(str, size);
+    check &= checkData(str, str_size, addressByte, data);
+    check &= checkCheckSum(str, str_size);
 
     return check;
 }

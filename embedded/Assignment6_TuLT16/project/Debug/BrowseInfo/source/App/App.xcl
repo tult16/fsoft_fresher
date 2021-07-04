@@ -1,21 +1,21 @@
-"C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assignment6_TuLT16\source\App.c"
+"D:\test\fsoft_fresher\embedded\Assignment6_TuLT16\source\App.c"
 -std=c11
 -ferror-limit=0
 -fbracket-depth=512
 -funsigned-char
 -MD
 -MF
-C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assignment6_TuLT16\project\Debug\BrowseInfo\source\App\App.pbi.dep
+D:\test\fsoft_fresher\embedded\Assignment6_TuLT16\project\Debug\BrowseInfo\source\App\App.pbi.dep
 -o
-C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assignment6_TuLT16\project\Debug\BrowseInfo\source\App\App.pbi
+D:\test\fsoft_fresher\embedded\Assignment6_TuLT16\project\Debug\BrowseInfo\source\App\App.pbi
 -I
-C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assignment6_TuLT16\source
+D:\test\fsoft_fresher\embedded\Assignment6_TuLT16\source
 -I
-C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assignment6_TuLT16\project\..\MKL46Z\MKL46Z
+D:\test\fsoft_fresher\embedded\Assignment6_TuLT16\project\..\MKL46Z\MKL46Z
 -I
-C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assignment6_TuLT16\project\..\CMSIS\CMSIS\Include
+D:\test\fsoft_fresher\embedded\Assignment6_TuLT16\project\..\CMSIS\CMSIS\Include
 -I
-C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assignment6_TuLT16\project\..\source
+D:\test\fsoft_fresher\embedded\Assignment6_TuLT16\project\..\source
 -I
 C:\Program Files\IAR Systems\Embedded Workbench 9.0\arm\inc\c\aarch32
 -I
@@ -23,11 +23,11 @@ C:\Program Files\IAR Systems\Embedded Workbench 9.0\arm\inc
 -I
 C:\Program Files\IAR Systems\Embedded Workbench 9.0\arm\inc\c
 -I
-C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assignment6_TuLT16\MKL46Z\MKL46Z
+D:\test\fsoft_fresher\embedded\Assignment6_TuLT16\MKL46Z\MKL46Z
 -I
-C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assignment6_TuLT16\CMSIS\CMSIS\Include
+D:\test\fsoft_fresher\embedded\Assignment6_TuLT16\CMSIS\CMSIS\Include
 -I
-C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assignment6_TuLT16\source
+D:\test\fsoft_fresher\embedded\Assignment6_TuLT16\source
 -D__CHAR_BITS__=8
 -D__CHAR_MAX__=0xff
 -D__CHAR_MIN__=0

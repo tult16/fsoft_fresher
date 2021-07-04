@@ -6,11 +6,52 @@
 #define UART_CLK SystemCoreClock
 /* Baud rate: 115200, Data bit: 8; Parity: None; Stop bits: 1; */
 
-volatile uint32_t count = 0;
-volatile uint32_t i = 0;
-volatile uint32_t k = 0;
-char *queue[5]= {0};
+#define QUEUE_MAX_SIZE 5
+char g_queue[QUEUE_MAX_SIZE][100] = {0};
+
+int g_first_index = -1;
+int g_last_index = -1;
+
 void CopyBuffer(char *buffSrc, char *buffDest, uint8_t n);
+
+void QUEUE_insert(char *str_buff, uint8_t byte_count)
+{
+
+    if (g_last_index == (QUEUE_MAX_SIZE -1))
+    {
+        g_last_index = -1;
+        g_first_index = 0;
+    }
+
+    if (g_first_index == -1)
+    {
+        g_first_index = 0;
+    }
+    g_last_index++;
+    CopyBuffer(str_buff, g_queue[g_last_index], byte_count);
+    g_queue[g_last_index][byte_count-1] = '\0';
+}
+
+bool QUEUE_get(char **str_out)
+{
+    bool check;
+
+    if ((g_first_index == -1) || (g_first_index > g_last_index))
+    {
+        /* queue is empty */
+        check = false;
+    }
+    else
+    {
+        *str_out = g_queue[g_first_index];
+        g_first_index++;
+        check = true;
+    }
+
+    return check;
+}
+
+
 void UART_SendString(char *buff, uint8_t byteCount)
 {
     uint8_t i;
@@ -23,68 +64,39 @@ void UART_SendString(char *buff, uint8_t byteCount)
 
 }
 
-char RxBuff[100] = {0};
-char TempBuff[100] = {0};
-volatile bool isr_flag = false;
-volatile uint8_t count1 = 0;
+char g_RxBuff[100] = {0};
+volatile bool g_end_of_srec = false;
 void UART0_IRQHandler(void)
 {
+    static uint8_t index = 0;
     if ((UART0->S1 & UART0_S1_RDRF_MASK) == UART0_S1_RDRF_MASK)
     {
-        // RxBuff[i] = UART0->D;
-        // if (RxBuff[i] != '\n')
-        // {i++;}
-        // else
-        // {CopyBuffer(RxBuff, TempBuff, i); isr_flag = true; g_length = i;}
-        
-        RxBuff[i] = UART0->D;
-        if (RxBuff[i] != '\n')
+        g_RxBuff[index] = UART0->D;
+        if (g_RxBuff[index] == '\n')
         {
-            
-            queue[0]=RxBuff;
-            i++;
-            
+            QUEUE_insert(g_RxBuff, index);
+            index = 0;
         }
         else
         {
-          isr_flag = true;
-          k=i;
-          i=0;
-          count1++;
-          if (count1 == 2)
-          {
-            count1=2;
-          }
+            index++;
         }
-        
     }
 
 }
 
-void ClearBuffer(char *buff, uint8_t n)
-{
-  uint8_t j;
-  for (j = 0; j < n; j++)
-  {
-    buff[j] = 0;
-  }
-}
-
 void CopyBuffer(char *buffSrc, char *buffDest, uint8_t n)
 {
-  uint8_t j;
-  for (j = 0; j < n; j++)
-  {
-    buffDest[j] = buffSrc[j];
-  }
+    uint8_t j;
+    for (j = 0; j < n; j++)
+    {
+        buffDest[j] = buffSrc[j];
+    }
 }
 
-int main()
+void UART_Init(void)
 {
-    char * buff = "Hello world\r\n";
-    //char RxBuff[100] = {0};
-
-    uint16_t j,sbr;
+    uint16_t sbr;
     /* Enable clock gate port A */
     SIM->SCGC5 = (SIM->SCGC5 & (~SIM_SCGC5_PORTA_MASK)) | SIM_SCGC5_PORTA(1);
     /* Enable UART0_TX, PTA1 */
@@ -117,52 +129,30 @@ int main()
     UART0->C2 = (UART0->C2 & (~(UART0_C2_TE_MASK | UART0_C2_RE_MASK  | UART0_C2_RIE_MASK))) | UART0_C2_TE_MASK | UART0_C2_RE_MASK | UART0_C2_RIE_MASK;
     /* Enable UART0 interrupt vector number */
     NVIC_EnableIRQ(UART0_IRQn);
-    //
+}
 
+int main()
+{
+    char * srec_line;
 
-    // while (1);
-    /* send string */
-    //j=0;
-    // while (j < 5)
-    // {
-    //     i=0;
-    //     while(buff[i]!= '\n')
-    //     {         /* check transmit data buffer full. */
-    //         while (( UART0->S1 & UART0_S1_TDRE_MASK) == 0)
-    //         {
-    //         }
-    //         UART0->D = buff[i];
-    //         i++;
-    //     }
-    //     j++;
-    // }
+    UART_Init();
 
-
-    i=0;
-    j=0;
     while (1)
     {
-        if (isr_flag == true)
+        if (QUEUE_get(&srec_line) == true)
         {
-            //if ((srecParse(TempBuff, g_length -1 ) == true))
-          if (count1 == 2)
-          {
-            count1=2;
-          }
-            if ((srecParse(queue[0], k -1 ) == true))
+            if ((srecParse(srec_line) == true))
             {
                 UART_SendString(">>\r\n", 4);
             }
             else
             {
                 UART_SendString("error\r\n", 7);
+                NVIC_DisableIRQ(UART0_IRQn);
+                break;
             }
-
-            //ClearBuffer(TempBuff, 100);
         }
-        isr_flag = false;
     }
 
-    // UART0->C2 = (UART0->C2 & (~UART0_C2_TE_MASK));
     return 0;
 }
