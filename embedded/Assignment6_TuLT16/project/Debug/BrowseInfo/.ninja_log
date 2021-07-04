@@ -1,0 +1,36 @@
+# ninja log v5
+199	268	6470761055666852	C:/Users/ADMINT/Desktop/hoc_fresher/Mock1/git_mock/fsoft_fresher/embedded/Assignment6_TuLT16/project/Debug/BrowseInfo/assignment6_TuLT16_part1.pbi	ed1d36db42d86fc
+1034	1296	6469466800000000	C:/Users/ADMINT/Desktop/hoc_fresher/Mock1/git_mock/fsoft_fresher/embedded/Assignment6_TuLT16/project/Debug/BrowseInfo/startup/system_MKL46Z4.xcl	30877d60b4abd4a2
+13	596	6469466800000000	C:/Users/ADMINT/Desktop/hoc_fresher/Mock1/git_mock/fsoft_fresher/embedded/Assignment6_TuLT16/project/Debug/BrowseInfo/source/Queue/Queue.xcl	591ddc6f1aeab5fa
+1308	1783	6469466814719740	C:/Users/ADMINT/Desktop/hoc_fresher/Mock1/git_mock/fsoft_fresher/embedded/Assignment6_TuLT16/project/Debug/BrowseInfo/startup/system_MKL46Z4.pbi	cededa65000065a7
+2	60	6470310178140566	C:/Users/ADMINT/Desktop/hoc_fresher/Mock1/git_mock/fsoft_fresher/embedded/Assignment6_TuLT16/project/Debug/BrowseInfo/source/Queue/Queue.pbi	950867fded16f72d
+277	363	6470761056625957	C:/Users/ADMINT/Desktop/hoc_fresher/Mock1/git_mock/fsoft_fresher/embedded/Assignment6_TuLT16/project/Debug/BrowseInfo/assignment6_TuLT16.pbd	44e6e8b5d2933aae
+374	1747	6470761070063453	C:/Users/ADMINT/Desktop/hoc_fresher/Mock1/git_mock/fsoft_fresher/embedded/Assignment6_TuLT16/project/Debug/BrowseInfo/assignment6_TuLT16.pbw	9e8d1098c20fc4e4
+609	804	6469466800000000	C:/Users/ADMINT/Desktop/hoc_fresher/Mock1/git_mock/fsoft_fresher/embedded/Assignment6_TuLT16/project/Debug/BrowseInfo/source/Srec parse/SrecPase.xcl	21677d1cb1960f01
+65	616	6469466800000000	C:/Users/ADMINT/Desktop/hoc_fresher/Mock1/git_mock/fsoft_fresher/embedded/Assignment6_TuLT16/project/Debug/BrowseInfo/source/App/App.xcl	97c3c91b08ab332
+2	195	6470343190359605	C:/Users/ADMINT/Desktop/hoc_fresher/Mock1/git_mock/fsoft_fresher/embedded/Assignment6_TuLT16/project/Debug/BrowseInfo/source/Srec parse/SrecPase.pbi	dfd44bc221c367d4
+938	1030	6469466807356589	C:/Users/ADMINT/Desktop/hoc_fresher/Mock1/git_mock/fsoft_fresher/embedded/Assignment6_TuLT16/project/Debug/BrowseInfo/source/App/App.pbi	68121497f298e25a
+832	1073	6469466800000000	C:/Users/ADMINT/Desktop/hoc_fresher/Mock1/git_mock/fsoft_fresher/embedded/Assignment6_TuLT16/project/Debug/BrowseInfo/source/UART0/UARTO.xcl	194307d4a5ab2916
+5	193	6470761054897565	C:/Users/ADMINT/Desktop/hoc_fresher/Mock1/git_mock/fsoft_fresher/embedded/Assignment6_TuLT16/project/Debug/BrowseInfo/source/UART0/UARTO.pbi	e8ca1ff2e642d514
+68	82	6470310178380339	C:/Users/ADMINT/Desktop/hoc_fresher/Mock1/git_mock/fsoft_fresher/embedded/Assignment6_TuLT16/project/Debug/BrowseInfo/assignment6_TuLT16_part0.pbi	a2da8ee96e38fedc
+1834	2047	6469466817467182	C:/Users/ADMINT/Desktop/hoc_fresher/Mock1/git_mock/fsoft_fresher/embedded/Assignment6_TuLT16/project/Debug/BrowseInfo/assignment6_TuLT16_part2.pbi	ad095147eccf6139
+3	169	6470763250395629	C:/Users/ADMINT/Desktop/hoc_fresher/Mock1/git_mock/fsoft_fresher/embedded/Assignment6_TuLT16/project/Debug/BrowseInfo/source/UART0/UARTO.pbi	e8ca1ff2e642d514
+178	245	6470763251151177	C:/Users/ADMINT/Desktop/hoc_fresher/Mock1/git_mock/fsoft_fresher/embedded/Assignment6_TuLT16/project/Debug/BrowseInfo/assignment6_TuLT16_part1.pbi	ed1d36db42d86fc
+255	337	6470763252090297	C:/Users/ADMINT/Desktop/hoc_fresher/Mock1/git_mock/fsoft_fresher/embedded/Assignment6_TuLT16/project/Debug/BrowseInfo/assignment6_TuLT16.pbd	44e6e8b5d2933aae
+1	1501	6470763326876715	C:/Users/ADMINT/Desktop/hoc_fresher/Mock1/git_mock/fsoft_fresher/embedded/Assignment6_TuLT16/project/Debug/BrowseInfo/assignment6_TuLT16.pbw	9e8d1098c20fc4e4
+2	170	6470763481112123	C:/Users/ADMINT/Desktop/hoc_fresher/Mock1/git_mock/fsoft_fresher/embedded/Assignment6_TuLT16/project/Debug/BrowseInfo/source/UART0/UARTO.pbi	e8ca1ff2e642d514
+180	238	6470763481806549	C:/Users/ADMINT/Desktop/hoc_fresher/Mock1/git_mock/fsoft_fresher/embedded/Assignment6_TuLT16/project/Debug/BrowseInfo/assignment6_TuLT16_part1.pbi	ed1d36db42d86fc
+251	329	6470763482725738	C:/Users/ADMINT/Desktop/hoc_fresher/Mock1/git_mock/fsoft_fresher/embedded/Assignment6_TuLT16/project/Debug/BrowseInfo/assignment6_TuLT16.pbd	44e6e8b5d2933aae
+2	1308	6470763551653642	C:/Users/ADMINT/Desktop/hoc_fresher/Mock1/git_mock/fsoft_fresher/embedded/Assignment6_TuLT16/project/Debug/BrowseInfo/assignment6_TuLT16.pbw	9e8d1098c20fc4e4
+2	180	6470764059890261	C:/Users/ADMINT/Desktop/hoc_fresher/Mock1/git_mock/fsoft_fresher/embedded/Assignment6_TuLT16/project/Debug/BrowseInfo/source/UART0/UARTO.pbi	e8ca1ff2e642d514
+188	251	6470764060619580	C:/Users/ADMINT/Desktop/hoc_fresher/Mock1/git_mock/fsoft_fresher/embedded/Assignment6_TuLT16/project/Debug/BrowseInfo/assignment6_TuLT16_part1.pbi	ed1d36db42d86fc
+262	345	6470764061568707	C:/Users/ADMINT/Desktop/hoc_fresher/Mock1/git_mock/fsoft_fresher/embedded/Assignment6_TuLT16/project/Debug/BrowseInfo/assignment6_TuLT16.pbd	44e6e8b5d2933aae
+356	1623	6470764073937208	C:/Users/ADMINT/Desktop/hoc_fresher/Mock1/git_mock/fsoft_fresher/embedded/Assignment6_TuLT16/project/Debug/BrowseInfo/assignment6_TuLT16.pbw	9e8d1098c20fc4e4
+2	169	6470764734891281	C:/Users/ADMINT/Desktop/hoc_fresher/Mock1/git_mock/fsoft_fresher/embedded/Assignment6_TuLT16/project/Debug/BrowseInfo/source/UART0/UARTO.pbi	e8ca1ff2e642d514
+179	239	6470764735612146	C:/Users/ADMINT/Desktop/hoc_fresher/Mock1/git_mock/fsoft_fresher/embedded/Assignment6_TuLT16/project/Debug/BrowseInfo/assignment6_TuLT16_part1.pbi	ed1d36db42d86fc
+251	336	6470764736581225	C:/Users/ADMINT/Desktop/hoc_fresher/Mock1/git_mock/fsoft_fresher/embedded/Assignment6_TuLT16/project/Debug/BrowseInfo/assignment6_TuLT16.pbd	44e6e8b5d2933aae
+2	1872	6470764814576236	C:/Users/ADMINT/Desktop/hoc_fresher/Mock1/git_mock/fsoft_fresher/embedded/Assignment6_TuLT16/project/Debug/BrowseInfo/assignment6_TuLT16.pbw	9e8d1098c20fc4e4
+2	289	6470766338395439	C:/Users/ADMINT/Desktop/hoc_fresher/Mock1/git_mock/fsoft_fresher/embedded/Assignment6_TuLT16/project/Debug/BrowseInfo/source/UART0/UARTO.pbi	e8ca1ff2e642d514
+294	425	6470766339774143	C:/Users/ADMINT/Desktop/hoc_fresher/Mock1/git_mock/fsoft_fresher/embedded/Assignment6_TuLT16/project/Debug/BrowseInfo/assignment6_TuLT16_part1.pbi	ed1d36db42d86fc
+433	539	6470766340953042	C:/Users/ADMINT/Desktop/hoc_fresher/Mock1/git_mock/fsoft_fresher/embedded/Assignment6_TuLT16/project/Debug/BrowseInfo/assignment6_TuLT16.pbd	44e6e8b5d2933aae
+548	1850	6470766353671229	C:/Users/ADMINT/Desktop/hoc_fresher/Mock1/git_mock/fsoft_fresher/embedded/Assignment6_TuLT16/project/Debug/BrowseInfo/assignment6_TuLT16.pbw	9e8d1098c20fc4e4

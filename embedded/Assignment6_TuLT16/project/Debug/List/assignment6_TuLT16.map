@@ -1,0 +1,303 @@
+###############################################################################
+#
+# IAR ELF Linker V9.10.2.313/W64 for ARM                  04/Jul/2021  11:37:19
+# Copyright 2007-2021 IAR Systems AB.
+#
+#    Output file  =
+#        C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assignment6_TuLT16\project\Debug\Exe\assignment6_TuLT16.out
+#    Map file     =
+#        C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assignment6_TuLT16\project\Debug\List\assignment6_TuLT16.map
+#    Command line =
+#        -f
+#        C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assignment6_TuLT16\project\Debug\Exe\assignment6_TuLT16.out.rsp
+#        (C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assignment6_TuLT16\project\Debug\Obj\source\App\App.o
+#        C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assignment6_TuLT16\project\Debug\Obj\source\Queue\Queue.o
+#        "C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assignment6_TuLT16\project\Debug\Obj\source\Srec
+#        parse\SrecPase.o"
+#        C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assignment6_TuLT16\project\Debug\Obj\startup\startup_MKL46Z4.o
+#        C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assignment6_TuLT16\project\Debug\Obj\startup\system_MKL46Z4.o
+#        C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assignment6_TuLT16\project\Debug\Obj\source\UART0\UARTO.o
+#        --no_out_extension -o
+#        C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assignment6_TuLT16\project\Debug\Exe\assignment6_TuLT16.out
+#        --map
+#        C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assignment6_TuLT16\project\Debug\List\assignment6_TuLT16.map
+#        --config "C:\Program Files\IAR Systems\Embedded Workbench
+#        9.0\arm\config\linker\NXP\MKL46Z256xxx4.icf" --semihosting --entry
+#        __iar_program_start --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because some modules are built with
+size limitations (and not runtime checking), and --advanced_heap
+was not specified.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at address 0x0 { ro section .intvec };
+"P1":  place in [from 0x0 to 0x3ff] |
+                [from 0x410 to 0x3'ffff] { ro };
+define block CSTACK with size = 2K, alignment = 8 { };
+define block HEAP with size = 4K, alignment = 8 { };
+"P3":  place in [from 0x1fff'e000 to 0x1fff'ffff] |
+                [from 0x2000'0000 to 0x2000'5fff] {
+          rw, block CSTACK, block HEAP };
+"P5":  place in [from 0x400 to 0x40f] { section FlashConfig };
+initialize by copy { rw };
+
+No sections matched the following patterns:
+
+  ro section application_specific_ro  in "P2|P4"
+  rw section application_specific_rw  in "P2|P4"
+
+
+  Section            Kind         Address   Size  Object
+  -------            ----         -------   ----  ------
+"A0":                                       0xc0
+  .intvec            ro code          0x0   0xc0  startup_MKL46Z4.o [5]
+                                   - 0xc0   0xc0
+
+"P1", part 1 of 2:                          0xe8
+  .text              ro code         0xc0   0xe0  I32DivModFast.o [7]
+  .text              ro code        0x1a0    0x2  IntDivZer.o [7]
+  .text              ro code        0x1a2    0x2  startup_MKL46Z4.o [5]
+  Initializer bytes  const          0x1a4    0x4  <for P3 s0>
+                                  - 0x1a8   0xe8
+
+"P5":                                       0x10
+  FlashConfig        ro code        0x400   0x10  startup_MKL46Z4.o [5]
+                                  - 0x410   0x10
+
+"P1", part 2 of 2:                         0x6ec
+  .text              ro code        0x410  0x2d4  SrecPase.o [3]
+  .text              ro code        0x6e4  0x244  UARTO.o [4]
+  .text              ro code        0x928   0x3c  zero_init3.o [7]
+  .text              ro code        0x964   0x30  copy_init3.o [7]
+  .text              ro code        0x994   0x28  data_init.o [7]
+  .text              ro code        0x9bc   0x24  startup_MKL46Z4.o [5]
+  .iar.init_table    const          0x9e0   0x24  - Linker created -
+  .text              ro code        0xa04   0x1e  cmain.o [7]
+  .text              ro code        0xa22    0x4  low_level_init.o [6]
+  .text              ro code        0xa26    0x8  exit.o [6]
+  .text              ro code        0xa2e    0x2  startup_MKL46Z4.o [5]
+  .text              ro code        0xa30    0xa  cexit.o [7]
+  .text              ro code        0xa3a    0x2  startup_MKL46Z4.o [5]
+  .text              ro code        0xa3c   0x14  exit.o [8]
+  .text              ro code        0xa50   0x1c  cstartup_M.o [7]
+  .rodata            const          0xa6c   0x10  UARTO.o [4]
+  .text              ro code        0xa7c    0xc  system_MKL46Z4.o [5]
+  .rodata            const          0xa88    0x8  UARTO.o [4]
+  .rodata            const          0xa90    0x8  UARTO.o [4]
+  .text              ro code        0xa98    0x8  startup_MKL46Z4.o [5]
+  .text              ro code        0xaa0    0x8  startup_MKL46Z4.o [5]
+  .text              ro code        0xaa8    0x8  startup_MKL46Z4.o [5]
+  .text              ro code        0xab0    0x8  startup_MKL46Z4.o [5]
+  .text              ro code        0xab8    0x8  startup_MKL46Z4.o [5]
+  .text              ro code        0xac0    0x8  startup_MKL46Z4.o [5]
+  .text              ro code        0xac8    0x8  startup_MKL46Z4.o [5]
+  .text              ro code        0xad0    0x8  startup_MKL46Z4.o [5]
+  .text              ro code        0xad8    0x8  startup_MKL46Z4.o [5]
+  .text              ro code        0xae0    0x8  startup_MKL46Z4.o [5]
+  .text              ro code        0xae8    0x8  startup_MKL46Z4.o [5]
+  .text              ro code        0xaf0    0x8  startup_MKL46Z4.o [5]
+  .text              ro code        0xaf8    0x2  startup_MKL46Z4.o [5]
+  .text              ro code        0xafa    0x2  startup_MKL46Z4.o [5]
+  .rodata            const          0xafc    0x0  zero_init3.o [7]
+  .rodata            const          0xafc    0x0  copy_init3.o [7]
+                                  - 0xafc  0x6ec
+
+"P3", part 1 of 3:                           0x4
+  P3 s0                       0x1fff'e000    0x4  <Init block>
+    .data            inited   0x1fff'e000    0x4  system_MKL46Z4.o [5]
+                            - 0x1fff'e004    0x4
+
+"P3", part 2 of 3:                          0x84
+  .bss               zero     0x1fff'e004   0x64  UARTO.o [4]
+  .bss               zero     0x1fff'e068   0x14  UARTO.o [4]
+  .bss               zero     0x1fff'e07c    0x4  UARTO.o [4]
+  .bss               zero     0x1fff'e080    0x4  UARTO.o [4]
+  .bss               zero     0x1fff'e084    0x1  UARTO.o [4]
+  .bss               zero     0x1fff'e085    0x1  UARTO.o [4]
+                            - 0x1fff'e086   0x82
+
+"P3", part 3 of 3:                         0x800
+  CSTACK                      0x1fff'e088  0x800  <Block>
+    CSTACK           uninit   0x1fff'e088  0x800  <Block tail>
+                            - 0x1fff'e888  0x800
+
+Unused ranges:
+
+         From           To      Size
+         ----           --      ----
+        0x1a8        0x3ff     0x258
+        0xafc     0x3'ffff  0x3'f504
+  0x1fff'e888  0x1fff'ffff    0x1778
+  0x2000'0000  0x2000'5fff    0x6000
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address      Size
+          -------      ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x82:
+          0x1fff'e004  0x82
+
+Copy (__iar_copy_init3)
+    1 source range, total size 0x4:
+                0x1a4   0x4
+    1 destination range, total size 0x4:
+          0x1fff'e000   0x4
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module             ro code  ro data  rw data
+    ------             -------  -------  -------
+command line/config:
+    --------------------------------------------
+    Total:
+
+C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assignment6_TuLT16\project\Debug\Obj\source\App: [1]
+    --------------------------------------------
+    Total:
+
+C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assignment6_TuLT16\project\Debug\Obj\source\Queue: [2]
+    --------------------------------------------
+    Total:
+
+C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assignment6_TuLT16\project\Debug\Obj\source\Srec parse: [3]
+    SrecPase.o             724
+    --------------------------------------------
+    Total:                 724
+
+C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assignment6_TuLT16\project\Debug\Obj\source\UART0: [4]
+    UARTO.o                580       32      130
+    --------------------------------------------
+    Total:                 580       32      130
+
+C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assignment6_TuLT16\project\Debug\Obj\startup: [5]
+    startup_MKL46Z4.o      350
+    system_MKL46Z4.o        12        4        4
+    --------------------------------------------
+    Total:                 362        4        4
+
+dl6M_tln.a: [6]
+    exit.o                   8
+    low_level_init.o         4
+    --------------------------------------------
+    Total:                  12
+
+rt6M_tl.a: [7]
+    I32DivModFast.o        224
+    IntDivZer.o              2
+    cexit.o                 10
+    cmain.o                 30
+    copy_init3.o            48
+    cstartup_M.o            28
+    data_init.o             40
+    zero_init3.o            60
+    --------------------------------------------
+    Total:                 442
+
+shb_l.a: [8]
+    exit.o                  20
+    --------------------------------------------
+    Total:                  20
+
+    Linker created                   36    2'048
+------------------------------------------------
+    Grand Total:         2'140       72    2'182
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address   Size  Type      Object
+-----                       -------   ----  ----      ------
+.iar.init_table$$Base         0x9e0          --   Gb  - Linker created -
+.iar.init_table$$Limit        0xa04          --   Gb  - Linker created -
+?main                         0xa05         Code  Gb  cmain.o [7]
+CSTACK$$Base            0x1fff'e088          --   Gb  - Linker created -
+CSTACK$$Limit           0x1fff'e888          --   Gb  - Linker created -
+ConvertChar2Hex               0x4cd   0x36  Code  Gb  SrecPase.o [3]
+NVIC_EnableIRQ                0x6e5    0xe  Code  Lc  UARTO.o [4]
+Region$$Table$$Base           0x9e0          --   Gb  - Linker created -
+Region$$Table$$Limit          0xa04          --   Gb  - Linker created -
+RxBuff                  0x1fff'e004   0x64  Data  Gb  UARTO.o [4]
+SystemCoreClock         0x1fff'e000    0x4  Data  Gb  system_MKL46Z4.o [5]
+SystemInit                    0xa7d    0x8  Code  Gb  system_MKL46Z4.o [5]
+UART0_IRQHandler              0x71b   0x62  Code  Gb  UARTO.o [4]
+UART_SendString               0x6f3   0x28  Code  Gb  UARTO.o [4]
+__Vectors                       0x0          --   Gb  startup_MKL46Z4.o [5]
+__Vectors_End                  0xc0         Data  Gb  startup_MKL46Z4.o [5]
+__Vectors_Size {Abs}           0xc0          --   Gb  startup_MKL46Z4.o [5]
+__aeabi_idiv                   0xed         Code  Gb  I32DivModFast.o [7]
+__aeabi_idiv0                 0x1a1         Code  Gb  IntDivZer.o [7]
+__aeabi_idivmod                0xed         Code  Gb  I32DivModFast.o [7]
+__aeabi_uidiv                  0xf3         Code  Gb  I32DivModFast.o [7]
+__aeabi_uidivmod               0xf3         Code  Gb  I32DivModFast.o [7]
+__cmain                       0xa05         Code  Gb  cmain.o [7]
+__exit                        0xa3d   0x14  Code  Gb  exit.o [8]
+__iar_copy_init3              0x965   0x30  Code  Gb  copy_init3.o [7]
+__iar_data_init3              0x995   0x28  Code  Gb  data_init.o [7]
+__iar_program_start           0xa51         Code  Gb  cstartup_M.o [7]
+__iar_zero_init3              0x929   0x3c  Code  Gb  zero_init3.o [7]
+__low_level_init              0xa23    0x4  Code  Gb  low_level_init.o [6]
+__vector_table                  0x0         Data  Gb  startup_MKL46Z4.o [5]
+__vector_table_0x1c            0x1c         Data  Gb  startup_MKL46Z4.o [5]
+_call_main                    0xa11         Code  Gb  cmain.o [7]
+_exit                         0xa31         Code  Gb  cexit.o [7]
+checkAddress                  0x589   0x6e  Code  Gb  SrecPase.o [3]
+checkByteCount                0x541   0x48  Code  Gb  SrecPase.o [3]
+checkCheckSum                 0x64f   0x96  Code  Gb  SrecPase.o [3]
+checkData                     0x5f7   0x58  Code  Gb  SrecPase.o [3]
+checkHexCharater              0x503   0x14  Code  Gb  SrecPase.o [3]
+checkRecordStart              0x517   0x12  Code  Gb  SrecPase.o [3]
+checkRecordType               0x529   0x18  Code  Gb  SrecPase.o [3]
+count1                  0x1fff'e085    0x1  Data  Gb  UARTO.o [4]
+exit                          0xa27    0x8  Code  Gb  exit.o [6]
+i                       0x1fff'e07c    0x4  Data  Gb  UARTO.o [4]
+isr_flag                0x1fff'e084    0x1  Data  Gb  UARTO.o [4]
+k                       0x1fff'e080    0x4  Data  Gb  UARTO.o [4]
+main                          0x77d  0x13a  Code  Gb  UARTO.o [4]
+queue                   0x1fff'e068   0x14  Data  Gb  UARTO.o [4]
+srecParse                     0x411   0xbc  Code  Gb  SrecPase.o [3]
+
+
+[1] = C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assignment6_TuLT16\project\Debug\Obj\source\App
+[2] = C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assignment6_TuLT16\project\Debug\Obj\source\Queue
+[3] = C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assignment6_TuLT16\project\Debug\Obj\source\Srec parse
+[4] = C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assignment6_TuLT16\project\Debug\Obj\source\UART0
+[5] = C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assignment6_TuLT16\project\Debug\Obj\startup
+[6] = dl6M_tln.a
+[7] = rt6M_tl.a
+[8] = shb_l.a
+
+  2'140 bytes of readonly  code memory
+     72 bytes of readonly  data memory
+  2'182 bytes of readwrite data memory
+
+Errors: none
+Warnings: none
