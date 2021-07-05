@@ -23,9 +23,9 @@
 
 if ($debugfile -eq "")
 {
-& "C:\Program Files\IAR Systems\Embedded Workbench 9.0\common\bin\cspybat" -f "D:\test\fsoft_fresher\embedded\Assignment6_TuLT16\project\settings\assignment6_TuLT16.Debug.general.xcl" --backend -f "D:\test\fsoft_fresher\embedded\Assignment6_TuLT16\project\settings\assignment6_TuLT16.Debug.driver.xcl" 
+& "C:\Program Files\IAR Systems\Embedded Workbench 9.0\common\bin\cspybat" -f "C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assignment6_TuLT16\project\settings\assignment6_TuLT16.Debug.general.xcl" --backend -f "C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assignment6_TuLT16\project\settings\assignment6_TuLT16.Debug.driver.xcl" 
 }
 else
 {
-& "C:\Program Files\IAR Systems\Embedded Workbench 9.0\common\bin\cspybat" -f "D:\test\fsoft_fresher\embedded\Assignment6_TuLT16\project\settings\assignment6_TuLT16.Debug.general.xcl" --debug_file=$debugfile --backend -f "D:\test\fsoft_fresher\embedded\Assignment6_TuLT16\project\settings\assignment6_TuLT16.Debug.driver.xcl" 
+& "C:\Program Files\IAR Systems\Embedded Workbench 9.0\common\bin\cspybat" -f "C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assignment6_TuLT16\project\settings\assignment6_TuLT16.Debug.general.xcl" --debug_file=$debugfile --backend -f "C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assignment6_TuLT16\project\settings\assignment6_TuLT16.Debug.driver.xcl" 
 }

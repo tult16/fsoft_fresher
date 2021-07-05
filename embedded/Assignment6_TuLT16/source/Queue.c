@@ -1,102 +1,70 @@
-// // C program for array implementation of queue
-// #include <limits.h>
-// #include <stdio.h>
-// #include <stdlib.h>
+/*******************************************************************************
+ * Includes
+ ******************************************************************************/
+#include "Queue.h"
 
-// // A structure to represent a queue
-// struct Queue {
-//     int front, rear, size;
-//     unsigned capacity;
-//     int* array;
-// };
+/*******************************************************************************
+ * Variables
+ ******************************************************************************/
+static char s_queue[QUEUE_MAX_SIZE][100] = {0};
+static int s_first_index = -1;
+static int s_last_index = -1;
 
-// // function to create a queue
-// // of given capacity.
-// // It initializes size of queue as 0
-// struct Queue* createQueue(unsigned capacity)
-// {
-//     struct Queue* queue = (struct Queue*)malloc(
-//         sizeof(struct Queue));
-//     queue->capacity = capacity;
-//     queue->front = queue->size = 0;
+/*******************************************************************************
+ * Prototypes
+ ******************************************************************************/
+static void Push_line(char *buffSrc, char *buffDest, uint8_t n);
 
-//     // This is important, see the enqueue
-//     queue->rear = capacity - 1;
-//     queue->array = (int*)malloc(
-//         queue->capacity * sizeof(int));
-//     return queue;
-// }
+/*******************************************************************************
+ * Codes
+ ******************************************************************************/
 
-// // Queue is full when size becomes
-// // equal to the capacity
-// int isFull(struct Queue* queue)
-// {
-//     return (queue->size == queue->capacity);
-// }
+/* Function insret srec line in queue */
+void QUEUE_insert(char *str_buff, uint8_t byte_count)
+{
+    if (s_last_index == (QUEUE_MAX_SIZE -1))
+    {
+        s_last_index = -1;
+        s_first_index = 0;
+    }
 
-// // Queue is empty when size is 0
-// int isEmpty(struct Queue* queue)
-// {
-//     return (queue->size == 0);
-// }
+    if (s_first_index == -1)
+    {
+        s_first_index = 0;
+    }
+    s_last_index++;
+    /* Push one srec line in queue */
+    Push_line(str_buff, s_queue[s_last_index], byte_count);
+    s_queue[s_last_index][byte_count-1] = '\0';
+}
 
-// // Function to add an item to the queue.
-// // It changes rear and size
-// void enqueue(struct Queue* queue, int item)
-// {
-//     if (isFull(queue))
-//         return;
-//     queue->rear = (queue->rear + 1)
-//                   % queue->capacity;
-//     queue->array[queue->rear] = item;
-//     queue->size = queue->size + 1;
-//     printf("%d enqueued to queue\n", item);
-// }
+/* Function get srec line in queue. */
+bool QUEUE_get(char **str_out)
+{
+    bool check;
 
-// // Function to remove an item from queue.
-// // It changes front and size
-// int dequeue(struct Queue* queue)
-// {
-//     if (isEmpty(queue))
-//         return INT_MIN;
-//     int item = queue->array[queue->front];
-//     queue->front = (queue->front + 1)
-//                    % queue->capacity;
-//     queue->size = queue->size - 1;
-//     return item;
-// }
+    if ((s_first_index == -1) || (s_first_index > s_last_index))
+    {
+        /* queue is empty */
+        check = false;
+    }
+    else
+    {
+        *str_out = s_queue[s_first_index];
+        s_first_index++;
+        check = true;
+    }
 
-// // Function to get front of queue
-// int front(struct Queue* queue)
-// {
-//     if (isEmpty(queue))
-//         return INT_MIN;
-//     return queue->array[queue->front];
-// }
+    return check;
+}
 
-// // Function to get rear of queue
-// int rear(struct Queue* queue)
-// {
-//     if (isEmpty(queue))
-//         return INT_MIN;
-//     return queue->array[queue->rear];
-// }
+/* Function push srec line to queue  */
+static void Push_line(char *buffSrc, char *buffDest, uint8_t n)
+{
+    uint8_t j;
 
-// // Driver program to test above functions./
-// int main()
-// {
-//     struct Queue* queue = createQueue(1000);
-
-//     enqueue(queue, 10);
-//     enqueue(queue, 20);
-//     enqueue(queue, 30);
-//     enqueue(queue, 40);
-
-//     printf("%d dequeued from queue\n\n",
-//            dequeue(queue));
-
-//     printf("Front item is %d\n", front(queue));
-//     printf("Rear item is %d\n", rear(queue));
-
-//     return 0;
-// }
+    for (j = 0; j < n; j++)
+    {
+        buffDest[j] = buffSrc[j];
+    }
+}

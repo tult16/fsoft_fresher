@@ -581,7 +581,7 @@
                 </option>
                 <option>
                     <name>AOutputFile</name>
-                    <state></state>
+                    <state>$FILE_BNAME$.o</state>
                 </option>
                 <option>
                     <name>ALimitErrorsCheck</name>
@@ -746,7 +746,7 @@
                 </option>
                 <option>
                     <name>IlinkIcfFile</name>
-                    <state>lnk0t.icf</state>
+                    <state>$TOOLKIT_DIR$\config\linker\NXP\MKL46Z256xxx4.icf</state>
                 </option>
                 <option>
                     <name>IlinkIcfFileSlave</name>
@@ -806,7 +806,7 @@
                 </option>
                 <option>
                     <name>IlinkProgramEntryLabel</name>
-                    <state></state>
+                    <state>__iar_program_start</state>
                 </option>
                 <option>
                     <name>DoFill</name>
@@ -979,7 +979,7 @@
                 </option>
                 <option>
                     <name>IlinkTrustzoneImportLibraryOut</name>
-                    <state>###Unitialized###</state>
+                    <state>assignment6_TuLT16_import_lib.o</state>
                 </option>
                 <option>
                     <name>OILinkExtraOption</name>
@@ -2100,17 +2100,26 @@
             <file>
                 <name>$PROJ_DIR$\..\source\Queue.c</name>
             </file>
+            <file>
+                <name>$PROJ_DIR$\..\source\Queue.h</name>
+            </file>
         </group>
         <group>
             <name>Srec parse</name>
             <file>
                 <name>$PROJ_DIR$\..\source\SrecPase.c</name>
             </file>
+            <file>
+                <name>$PROJ_DIR$\..\source\SrecPase.h</name>
+            </file>
         </group>
         <group>
             <name>UART0</name>
             <file>
-                <name>$PROJ_DIR$\..\source\UARTO.c</name>
+                <name>$PROJ_DIR$\..\source\UART_driver.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\..\source\UART_driver.h</name>
             </file>
         </group>
     </group>

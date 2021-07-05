@@ -1,6 +1,10 @@
 ###############################################################################
 #
+<<<<<<< HEAD
 # IAR ELF Linker V9.10.2.313/W64 for ARM                  04/Jul/2021  16:31:18
+=======
+# IAR ELF Linker V9.10.2.313/W64 for ARM                  05/Jul/2021  11:03:30
+>>>>>>> 0ad1e2d (update ass6)
 # Copyright 2007-2021 IAR Systems AB.
 #
 #    Output file  =
@@ -14,9 +18,15 @@
 #        D:\test\fsoft_fresher\embedded\Assignment6_TuLT16\project\Debug\Obj\source\Queue\Queue.o
 #        "D:\test\fsoft_fresher\embedded\Assignment6_TuLT16\project\Debug\Obj\source\Srec
 #        parse\SrecPase.o"
+<<<<<<< HEAD
 #        D:\test\fsoft_fresher\embedded\Assignment6_TuLT16\project\Debug\Obj\startup\startup_MKL46Z4.o
 #        D:\test\fsoft_fresher\embedded\Assignment6_TuLT16\project\Debug\Obj\startup\system_MKL46Z4.o
 #        D:\test\fsoft_fresher\embedded\Assignment6_TuLT16\project\Debug\Obj\source\UART0\UARTO.o
+=======
+#        C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assignment6_TuLT16\project\Debug\Obj\startup\startup_MKL46Z4.o
+#        C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assignment6_TuLT16\project\Debug\Obj\startup\system_MKL46Z4.o
+#        C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assignment6_TuLT16\project\Debug\Obj\source\UART0\UART_driver.o
+>>>>>>> 0ad1e2d (update ass6)
 #        --no_out_extension -o
 #        D:\test\fsoft_fresher\embedded\Assignment6_TuLT16\project\Debug\Exe\assignment6_TuLT16.out
 #        --map
@@ -73,12 +83,21 @@ No sections matched the following patterns:
                                    - 0xc0   0xc0
 
 "P1", part 1 of 2:                         0x104
+<<<<<<< HEAD
   .text              ro code         0xc0    0x2  startup_MKL46Z4.o [5]
   .text              ro code         0xc4    0xe  strlen.o [7]
   .text              ro code         0xd2   0xe0  I32DivModFast.o [7]
   .text              ro code        0x1b2    0x2  startup_MKL46Z4.o [5]
   .text              ro code        0x1b4    0x2  IntDivZer.o [7]
   .text              ro code        0x1b6    0x2  startup_MKL46Z4.o [5]
+=======
+  .text              ro code         0xc0    0xe  strlen.o [7]
+  .text              ro code         0xce   0xe0  I32DivModFast.o [7]
+  .text              ro code        0x1ae    0x2  startup_MKL46Z4.o [5]
+  .text              ro code        0x1b0    0x2  IntDivZer.o [7]
+  .text              ro code        0x1b2    0x2  startup_MKL46Z4.o [5]
+  .text              ro code        0x1b4    0x2  startup_MKL46Z4.o [5]
+>>>>>>> 0ad1e2d (update ass6)
   Initializer bytes  const          0x1b8    0xc  <for P3 s0>
                                   - 0x1c4  0x104
 
@@ -86,6 +105,7 @@ No sections matched the following patterns:
   FlashConfig        ro code        0x400   0x10  startup_MKL46Z4.o [5]
                                   - 0x410   0x10
 
+<<<<<<< HEAD
 "P1", part 2 of 2:                         0x770
   .text              ro code        0x410  0x2da  SrecPase.o [3]
   .text              ro code        0x6ec  0x2d4  UARTO.o [4]
@@ -138,14 +158,75 @@ No sections matched the following patterns:
   CSTACK                      0x1fff'e1a0  0x800  <Block>
     CSTACK           uninit   0x1fff'e1a0  0x800  <Block tail>
                             - 0x1fff'e9a0  0x800
+=======
+"P1", part 2 of 2:                         0x74c
+  .text              ro code        0x410  0x2a8  SrecPase.o [3]
+  .text              ro code        0x6b8  0x1c0  UART_driver.o [4]
+  .text              ro code        0x878   0xce  Queue.o [2]
+  .text              ro code        0x948   0x54  App.o [1]
+  .text              ro code        0x99c   0x3c  zero_init3.o [7]
+  .text              ro code        0x9d8   0x30  copy_init3.o [7]
+  .text              ro code        0xa08   0x28  data_init.o [7]
+  .text              ro code        0xa30   0x24  startup_MKL46Z4.o [5]
+  .iar.init_table    const          0xa54   0x24  - Linker created -
+  .text              ro code        0xa78   0x1e  cmain.o [7]
+  .text              ro code        0xa96    0x4  low_level_init.o [6]
+  .text              ro code        0xa9a    0x8  exit.o [6]
+  .text              ro code        0xaa2    0x2  startup_MKL46Z4.o [5]
+  .text              ro code        0xaa4    0xa  cexit.o [7]
+  .text              ro code        0xaae    0x2  startup_MKL46Z4.o [5]
+  .text              ro code        0xab0   0x14  exit.o [8]
+  .text              ro code        0xac4   0x1c  cstartup_M.o [7]
+  .text              ro code        0xae0    0xc  system_MKL46Z4.o [5]
+  .rodata            const          0xaec    0x8  App.o [1]
+  .rodata            const          0xaf4    0x8  App.o [1]
+  .text              ro code        0xafc    0x8  startup_MKL46Z4.o [5]
+  .text              ro code        0xb04    0x8  startup_MKL46Z4.o [5]
+  .text              ro code        0xb0c    0x8  startup_MKL46Z4.o [5]
+  .text              ro code        0xb14    0x8  startup_MKL46Z4.o [5]
+  .text              ro code        0xb1c    0x8  startup_MKL46Z4.o [5]
+  .text              ro code        0xb24    0x8  startup_MKL46Z4.o [5]
+  .text              ro code        0xb2c    0x8  startup_MKL46Z4.o [5]
+  .text              ro code        0xb34    0x8  startup_MKL46Z4.o [5]
+  .text              ro code        0xb3c    0x8  startup_MKL46Z4.o [5]
+  .text              ro code        0xb44    0x8  startup_MKL46Z4.o [5]
+  .text              ro code        0xb4c    0x8  startup_MKL46Z4.o [5]
+  .text              ro code        0xb54    0x8  startup_MKL46Z4.o [5]
+  .rodata            const          0xb5c    0x0  zero_init3.o [7]
+  .rodata            const          0xb5c    0x0  copy_init3.o [7]
+                                  - 0xb5c  0x74c
+
+"P3", part 1 of 3:                           0xc
+  P3 s0                       0x1fff'e000    0xc  <Init block>
+    .data            inited   0x1fff'e000    0x4  Queue.o [2]
+    .data            inited   0x1fff'e004    0x4  Queue.o [2]
+    .data            inited   0x1fff'e008    0x4  system_MKL46Z4.o [5]
+                            - 0x1fff'e00c    0xc
+
+"P3", part 2 of 3:                         0x25c
+  .bss               zero     0x1fff'e00c  0x1f4  Queue.o [2]
+  .bss               zero     0x1fff'e200   0x64  UART_driver.o [4]
+  .bss               zero     0x1fff'e264    0x1  UART_driver.o [4]
+                            - 0x1fff'e265  0x259
+
+"P3", part 3 of 3:                         0x800
+  CSTACK                      0x1fff'e268  0x800  <Block>
+    CSTACK           uninit   0x1fff'e268  0x800  <Block tail>
+                            - 0x1fff'ea68  0x800
+>>>>>>> 0ad1e2d (update ass6)
 
 Unused ranges:
 
          From           To      Size
          ----           --      ----
         0x1c4        0x3ff     0x23c
+<<<<<<< HEAD
         0xb80     0x3'ffff  0x3'f480
   0x1fff'e9a0  0x1fff'ffff    0x1660
+=======
+        0xb5c     0x3'ffff  0x3'f4a4
+  0x1fff'ea68  0x1fff'ffff    0x1598
+>>>>>>> 0ad1e2d (update ass6)
   0x2000'0000  0x2000'5fff    0x6000
 
 
@@ -156,8 +237,13 @@ Unused ranges:
           Address      Size
           -------      ----
 Zero (__iar_zero_init3)
+<<<<<<< HEAD
     1 destination range, total size 0x191:
           0x1fff'e00c  0x191
+=======
+    1 destination range, total size 0x259:
+          0x1fff'e00c  0x259
+>>>>>>> 0ad1e2d (update ass6)
 
 Copy (__iar_copy_init3)
     1 source range, total size 0xc:
@@ -177,14 +263,25 @@ command line/config:
     --------------------------------------------
     Total:
 
+<<<<<<< HEAD
 D:\test\fsoft_fresher\embedded\Assignment6_TuLT16\project\Debug\Obj\source\App: [1]
+=======
+C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assignment6_TuLT16\project\Debug\Obj\source\App: [1]
+    App.o                   84       16
+>>>>>>> 0ad1e2d (update ass6)
     --------------------------------------------
-    Total:
+    Total:                  84       16
 
+<<<<<<< HEAD
 D:\test\fsoft_fresher\embedded\Assignment6_TuLT16\project\Debug\Obj\source\Queue: [2]
+=======
+C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assignment6_TuLT16\project\Debug\Obj\source\Queue: [2]
+    Queue.o                206        8      508
+>>>>>>> 0ad1e2d (update ass6)
     --------------------------------------------
-    Total:
+    Total:                 206        8      508
 
+<<<<<<< HEAD
 D:\test\fsoft_fresher\embedded\Assignment6_TuLT16\project\Debug\Obj\source\Srec parse: [3]
     SrecPase.o             730
     --------------------------------------------
@@ -194,6 +291,17 @@ D:\test\fsoft_fresher\embedded\Assignment6_TuLT16\project\Debug\Obj\source\UART0
     UARTO.o                724       24      409
     --------------------------------------------
     Total:                 724       24      409
+=======
+C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assignment6_TuLT16\project\Debug\Obj\source\Srec parse: [3]
+    SrecPase.o             680
+    --------------------------------------------
+    Total:                 680
+
+C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assignment6_TuLT16\project\Debug\Obj\source\UART0: [4]
+    UART_driver.o          448               101
+    --------------------------------------------
+    Total:                 448               101
+>>>>>>> 0ad1e2d (update ass6)
 
 D:\test\fsoft_fresher\embedded\Assignment6_TuLT16\project\Debug\Obj\startup: [5]
     startup_MKL46Z4.o      350
@@ -225,10 +333,17 @@ shb_l.a: [8]
     --------------------------------------------
     Total:                  20
 
+<<<<<<< HEAD
     Gaps                     4
     Linker created                   36    2'048
 ------------------------------------------------
     Grand Total:         2'308       64    2'461
+=======
+    Gaps                     2
+    Linker created                   38    2'048
+------------------------------------------------
+    Grand Total:         2'270       66    2'661
+>>>>>>> 0ad1e2d (update ass6)
 
 
 *******************************************************************************
@@ -237,6 +352,7 @@ shb_l.a: [8]
 
 Entry                       Address   Size  Type      Object
 -----                       -------   ----  ----      ------
+<<<<<<< HEAD
 .iar.init_table$$Base         0xa78          --   Gb  - Linker created -
 .iar.init_table$$Limit        0xa9c          --   Gb  - Linker created -
 ?main                         0xa9d         Code  Gb  cmain.o [7]
@@ -298,13 +414,82 @@ strlen                         0xc5         Code  Gb  strlen.o [7]
 [3] = D:\test\fsoft_fresher\embedded\Assignment6_TuLT16\project\Debug\Obj\source\Srec parse
 [4] = D:\test\fsoft_fresher\embedded\Assignment6_TuLT16\project\Debug\Obj\source\UART0
 [5] = D:\test\fsoft_fresher\embedded\Assignment6_TuLT16\project\Debug\Obj\startup
+=======
+.iar.init_table$$Base         0xa54          --   Gb  - Linker created -
+.iar.init_table$$Limit        0xa78          --   Gb  - Linker created -
+?main                         0xa79         Code  Gb  cmain.o [7]
+CSTACK$$Base            0x1fff'e268          --   Gb  - Linker created -
+CSTACK$$Limit           0x1fff'ea68          --   Gb  - Linker created -
+ConvertChar2Hex               0x4a1   0x36  Code  Gb  SrecPase.o [3]
+NVIC_DisableIRQ               0x949    0xe  Code  Lc  App.o [1]
+NVIC_EnableIRQ                0x6b9    0xe  Code  Lc  UART_driver.o [4]
+Push_line                     0x925   0x22  Code  Lc  Queue.o [2]
+QUEUE_get                     0x8db   0x3c  Code  Gb  Queue.o [2]
+QUEUE_insert                  0x879   0x62  Code  Gb  Queue.o [2]
+Region$$Table$$Base           0xa54          --   Gb  - Linker created -
+Region$$Table$$Limit          0xa78          --   Gb  - Linker created -
+SREC_CheckAddress             0x55d   0x6e  Code  Gb  SrecPase.o [3]
+SREC_CheckByteCount           0x515   0x48  Code  Gb  SrecPase.o [3]
+SREC_CheckData                0x5cb   0x58  Code  Gb  SrecPase.o [3]
+SREC_CheckHexCharater         0x4d7   0x14  Code  Gb  SrecPase.o [3]
+SREC_CheckRecordStart         0x4eb   0x12  Code  Gb  SrecPase.o [3]
+SREC_CheckRecordType          0x4fd   0x18  Code  Gb  SrecPase.o [3]
+SREC_CheckSum                 0x623   0x96  Code  Gb  SrecPase.o [3]
+SREC_Parse                    0x411   0x90  Code  Gb  SrecPase.o [3]
+SystemCoreClock         0x1fff'e008    0x4  Data  Gb  system_MKL46Z4.o [5]
+SystemInit                    0xae1    0x8  Code  Gb  system_MKL46Z4.o [5]
+UART0_IRQHandler              0x7e5   0x40  Code  Gb  UART_driver.o [4]
+UART0_IRQHandler::index
+                        0x1fff'e264    0x1  Data  Lc  UART_driver.o [4]
+UART_Init                     0x6c7   0xf6  Code  Gb  UART_driver.o [4]
+UART_SendString               0x7bd   0x28  Code  Gb  UART_driver.o [4]
+__Vectors                       0x0          --   Gb  startup_MKL46Z4.o [5]
+__Vectors_End                  0xc0         Data  Gb  startup_MKL46Z4.o [5]
+__Vectors_Size {Abs}           0xc0          --   Gb  startup_MKL46Z4.o [5]
+__aeabi_idiv                   0xfb         Code  Gb  I32DivModFast.o [7]
+__aeabi_idiv0                 0x1b1         Code  Gb  IntDivZer.o [7]
+__aeabi_idivmod                0xfb         Code  Gb  I32DivModFast.o [7]
+__aeabi_uidiv                 0x101         Code  Gb  I32DivModFast.o [7]
+__aeabi_uidivmod              0x101         Code  Gb  I32DivModFast.o [7]
+__cmain                       0xa79         Code  Gb  cmain.o [7]
+__exit                        0xab1   0x14  Code  Gb  exit.o [8]
+__iar_copy_init3              0x9d9   0x30  Code  Gb  copy_init3.o [7]
+__iar_data_init3              0xa09   0x28  Code  Gb  data_init.o [7]
+__iar_program_start           0xac5         Code  Gb  cstartup_M.o [7]
+__iar_zero_init3              0x99d   0x3c  Code  Gb  zero_init3.o [7]
+__low_level_init              0xa97    0x4  Code  Gb  low_level_init.o [6]
+__vector_table                  0x0         Data  Gb  startup_MKL46Z4.o [5]
+__vector_table_0x1c            0x1c         Data  Gb  startup_MKL46Z4.o [5]
+_call_main                    0xa85         Code  Gb  cmain.o [7]
+_exit                         0xaa5         Code  Gb  cexit.o [7]
+exit                          0xa9b    0x8  Code  Gb  exit.o [6]
+main                          0x957   0x3a  Code  Gb  App.o [1]
+s_RxBuff                0x1fff'e200   0x64  Data  Lc  UART_driver.o [4]
+s_first_index           0x1fff'e000    0x4  Data  Lc  Queue.o [2]
+s_last_index            0x1fff'e004    0x4  Data  Lc  Queue.o [2]
+s_queue                 0x1fff'e00c  0x1f4  Data  Lc  Queue.o [2]
+strlen                         0xc1         Code  Gb  strlen.o [7]
+
+
+[1] = C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assignment6_TuLT16\project\Debug\Obj\source\App
+[2] = C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assignment6_TuLT16\project\Debug\Obj\source\Queue
+[3] = C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assignment6_TuLT16\project\Debug\Obj\source\Srec parse
+[4] = C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assignment6_TuLT16\project\Debug\Obj\source\UART0
+[5] = C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assignment6_TuLT16\project\Debug\Obj\startup
+>>>>>>> 0ad1e2d (update ass6)
 [6] = dl6M_tln.a
 [7] = rt6M_tl.a
 [8] = shb_l.a
 
+<<<<<<< HEAD
   2'308 bytes of readonly  code memory
      64 bytes of readonly  data memory
   2'461 bytes of readwrite data memory
+=======
+  2'270 bytes of readonly  code memory
+     66 bytes of readonly  data memory
+  2'661 bytes of readwrite data memory
+>>>>>>> 0ad1e2d (update ass6)
 
 Errors: none
 Warnings: none

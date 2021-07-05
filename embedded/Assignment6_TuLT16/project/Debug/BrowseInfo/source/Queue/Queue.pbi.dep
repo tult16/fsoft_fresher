@@ -1,2 +1,15 @@
+<<<<<<< HEAD
 D:\test\fsoft_fresher\embedded\Assignment6_TuLT16\project\Debug\BrowseInfo\source\Queue\Queue.pbi: \
   D:\test\fsoft_fresher\embedded\Assignment6_TuLT16\source\Queue.c
+=======
+C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assignment6_TuLT16\project\Debug\BrowseInfo\source\Queue\Queue.pbi: \
+  C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assignment6_TuLT16\source\Queue.c \
+  C:\Users\ADMINT\Desktop\hoc_fresher\Mock1\git_mock\fsoft_fresher\embedded\Assignment6_TuLT16\source\Queue.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\stdint.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\ycheck.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\yvals.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\DLib_Defaults.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\DLib_Config_Normal.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\DLib_Product.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\stdbool.h
+>>>>>>> 0ad1e2d (update ass6)

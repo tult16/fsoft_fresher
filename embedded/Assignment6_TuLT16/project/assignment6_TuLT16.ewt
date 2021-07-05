@@ -2852,17 +2852,26 @@
             <file>
                 <name>$PROJ_DIR$\..\source\Queue.c</name>
             </file>
+            <file>
+                <name>$PROJ_DIR$\..\source\Queue.h</name>
+            </file>
         </group>
         <group>
             <name>Srec parse</name>
             <file>
                 <name>$PROJ_DIR$\..\source\SrecPase.c</name>
             </file>
+            <file>
+                <name>$PROJ_DIR$\..\source\SrecPase.h</name>
+            </file>
         </group>
         <group>
             <name>UART0</name>
             <file>
-                <name>$PROJ_DIR$\..\source\UARTO.c</name>
+                <name>$PROJ_DIR$\..\source\UART_driver.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\..\source\UART_driver.h</name>
             </file>
         </group>
     </group>

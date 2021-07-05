@@ -1,12 +1,19 @@
-#include <string.h>
-#include <stdbool.h>
-#include <stdint.h>
+/*******************************************************************************
+ * Includes
+ ******************************************************************************/
 #include "SrecPase.h"
 
-#define SIZE 255
+/*******************************************************************************
+ * Codes
+ ******************************************************************************/
 
+<<<<<<< HEAD
 
 bool srecParse(char *str)
+=======
+/* Function parse srec line */
+bool SREC_Parse(char *str)
+>>>>>>> 0ad1e2d (update ass6)
 {
     bool check = false;
     char recordType;
@@ -16,6 +23,7 @@ bool srecParse(char *str)
     uint8_t str_size;
 
     str_size = strlen(str);
+<<<<<<< HEAD
 
     check = checkRecordStart(str[0]);
     check &= checkRecordType(str[1], &recordType);
@@ -23,6 +31,14 @@ bool srecParse(char *str)
     check &= checkAddress(str, recordType, &addressByte, address);
     check &= checkData(str, str_size, addressByte, data);
     check &= checkCheckSum(str, str_size);
+=======
+    check = SREC_CheckRecordStart(str[0]);
+    check &= SREC_CheckRecordType(str[1], &recordType);
+    check &= SREC_CheckByteCount(str, str_size);
+    check &= SREC_CheckAddress(str, recordType, &addressByte, address);
+    check &= SREC_CheckData(str, str_size, addressByte, data);
+    check &= SREC_CheckSum(str, str_size);
+>>>>>>> 0ad1e2d (update ass6)
 
     return check;
 }
@@ -53,7 +69,7 @@ uint8_t ConvertChar2Hex(char byte)
 }
 
 /*Function check hexa character*/
-bool checkHexCharater(char byte)
+bool SREC_CheckHexCharater(char byte)
 {
     bool check = true;
 
@@ -66,7 +82,7 @@ bool checkHexCharater(char byte)
 }
 
 /*Function check charcter record start is 'S' in line */
-bool checkRecordStart(char byte)
+bool SREC_CheckRecordStart(char byte)
 {
     bool check = true;
     if (byte != 'S')
@@ -78,7 +94,7 @@ bool checkRecordStart(char byte)
 }
 
 /*Function check record type*/
-bool checkRecordType(char byte, char* recordType)
+bool SREC_CheckRecordType(char byte, char* recordType)
 {
     bool check = false;
     if ((byte >= '0') && (byte <= '9'))
@@ -90,17 +106,15 @@ bool checkRecordType(char byte, char* recordType)
     return check;
 }
 
-
-
 /*Function check ByteCount in line*/
-bool checkByteCount(char str[], int length)
+bool SREC_CheckByteCount(char str[], int length)
 {
     bool check = false;
     uint8_t byteCount;
-    if (checkHexCharater(str[S19_BYTECOUNT_START_INDEX]) && checkHexCharater(str[S19_BYTECOUNT_START_INDEX+1]))
+    if (SREC_CheckHexCharater(str[SREC_BYTECOUNT_START_INDEX]) && SREC_CheckHexCharater(str[SREC_BYTECOUNT_START_INDEX+1]))
     {
         check = true;
-        byteCount = (ConvertChar2Hex(str[S19_BYTECOUNT_START_INDEX]) << 4) + ConvertChar2Hex(str[S19_BYTECOUNT_START_INDEX + 1]);
+        byteCount = (ConvertChar2Hex(str[SREC_BYTECOUNT_START_INDEX]) << 4) + ConvertChar2Hex(str[SREC_BYTECOUNT_START_INDEX + 1]);
         if (byteCount != ((length - 4)/2))
         {
             check = false;
@@ -111,7 +125,7 @@ bool checkByteCount(char str[], int length)
 }
 
 /*Function check Adress in line*/
-bool checkAddress(char str[], char recordType, uint8_t *addressByte, char s19Address[])
+bool SREC_CheckAddress(char str[], char recordType, uint8_t *addressByte, char s19Address[])
 {
     bool check = true;
     int i;
@@ -135,16 +149,16 @@ bool checkAddress(char str[], char recordType, uint8_t *addressByte, char s19Add
         default:
             *addressByte = 0;
     }
-    for (i = S19_ADDRESS_START_INDEX; i < (S19_ADDRESS_START_INDEX + *addressByte); i++)
+    for (i = SREC_ADDRESS_START_INDEX; i < (SREC_ADDRESS_START_INDEX + *addressByte); i++)
     {
-        if (false == (checkHexCharater(str[i])))
+        if (false == (SREC_CheckHexCharater(str[i])))
         {
             check = false;
             break;
         }
         else
         {
-            s19Address[i - S19_ADDRESS_START_INDEX] = str[i];
+            s19Address[i - SREC_ADDRESS_START_INDEX] = str[i];
         }
     }
 
@@ -152,11 +166,11 @@ bool checkAddress(char str[], char recordType, uint8_t *addressByte, char s19Add
 }
 
 /*Function check data in line*/
-bool checkData(char str[], int length, int addressByte, char s19Data[])
+bool SREC_CheckData(char str[], int length, int addressByte, char s19Data[])
 {
     bool check = true;
     int i;
-    if ((S19_ADDRESS_START_INDEX + addressByte + S19_CHECKSUM_BYTE_COUNT) >= length)
+    if ((SREC_ADDRESS_START_INDEX + addressByte + SREC_CHECKSUM_BYTE_COUNT) >= length)
     {
         /* no data in line*/
         check = true;
@@ -164,37 +178,37 @@ bool checkData(char str[], int length, int addressByte, char s19Data[])
     }
     else
     {
-        for ( i = (S19_ADDRESS_START_INDEX + addressByte); i < (length-2); i++)
+        for ( i = (SREC_ADDRESS_START_INDEX + addressByte); i < (length-2); i++)
         {
-            if (false == (checkHexCharater(str[i])))
+            if (false == (SREC_CheckHexCharater(str[i])))
             {
                 check = false;
                 break;
             }
             else
             {
-                s19Data[i - (S19_ADDRESS_START_INDEX + addressByte)] = str[i];
+                s19Data[i - (SREC_ADDRESS_START_INDEX + addressByte)] = str[i];
             }
         }
-        s19Data[i - (S19_ADDRESS_START_INDEX + addressByte)] = '\0';
+        s19Data[i - (SREC_ADDRESS_START_INDEX + addressByte)] = '\0';
     }
 
     return check;
 }
 
 /*Function check checksum in line*/
-bool checkCheckSum(char str[], int length)
+bool SREC_CheckSum(char str[], int length)
 {
     bool check = false;
     uint16_t calCheckSum = 0;
     uint8_t actualCheckSum = 0;
-    if (checkHexCharater(str[length-2]) && checkHexCharater(str[length-1]))
+    if (SREC_CheckHexCharater(str[length-2]) && SREC_CheckHexCharater(str[length-1]))
     {
         check = true;
         int i;
-        for (i = 0; i < (length - S19_RECORD_TYPE_BYTE_COUNT - S19_CHECKSUM_BYTE_COUNT)/2; i++)
+        for (i = 0; i < (length - SREC_RECORD_TYPE_BYTE_COUNT - SREC_CHECKSUM_BYTE_COUNT)/2; i++)
         {
-            calCheckSum += (ConvertChar2Hex(str[S19_BYTECOUNT_START_INDEX + 2*i]) << 4) + ConvertChar2Hex(str[S19_BYTECOUNT_START_INDEX + 2*i + 1]);
+            calCheckSum += (ConvertChar2Hex(str[SREC_BYTECOUNT_START_INDEX + 2*i]) << 4) + ConvertChar2Hex(str[SREC_BYTECOUNT_START_INDEX + 2*i + 1]);
         }
         calCheckSum     =  calCheckSum & 0xFF;
         calCheckSum     = ~calCheckSum & 0xFF;
@@ -206,5 +220,7 @@ bool checkCheckSum(char str[], int length)
     }
     return check;
 }
+
+
 
 

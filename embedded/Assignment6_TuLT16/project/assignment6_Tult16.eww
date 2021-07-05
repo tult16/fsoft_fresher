@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspace>
+    <project>
+        <path>$WS_DIR$\..\..\Assigment3_TuLT16\project\assigment3_TuLT16.ewp</path>
+    </project>
+    <project>
+        <path>$WS_DIR$\..\..\Assigment5_TuLT16\project\assignment5_Tult16.ewp</path>
+    </project>
+    <project>
+        <path>$WS_DIR$\assignment6_TuLT16.ewp</path>
+    </project>
+    <project>
+        <path>$WS_DIR$\..\..\Assigment4_TuLT16\project\asssignment4_TuLT16.ewp</path>
+    </project>
+    <batchBuild />
+</workspace>
